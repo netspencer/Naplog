@@ -1,9 +1,9 @@
-<nav>
-	<div class="container_12">
+<header>
+	<hgroup class="container_12">
 		<div class="grid_2">
 			<h1><a href="<?=base_url()?>"><img src="<?=base_url()?>public/img/dolphinlogo.png"></a></h1>
 		</div>
-		<div class="grid_10">
+		<nav class="grid_10">
 			<ul class="nav">
 				<li class="left first <?php if($current=="dashboard") echo "current"; ?>"><a href="<?=base_url()?>dashboard">Dashboard</a></li>
 				<li class="left <?php if($current=="dreams") echo "current"; ?>"><a href="<?=base_url()?>dreams">Dreams</a></li>
@@ -21,7 +21,7 @@
 				<?php endif;?>
 				<div class="clear"></div>
 			</ul>
-		</div>
+		</nav>
 		<div class="clear"></div>
-	</div>
-</nav>
+	</hgroup>
+</header>

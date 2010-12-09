@@ -11,15 +11,3 @@
 </head>
 
 <body <?php if($body_class): ?>class="<?=$body_class?>"<?php endif;?>>
-	
-	<header>
-		<div class="container_12">
-			<div class="grid_2">
-				<h1><a href="<?=base_url()?>"><img src="<?=base_url()?>public/img/dolphinlogo.png"></a></h1>
-			</div>
-			<div class="grid_10">
-				<h2>where dreams come to life...</h2>
-			</div>
-			<div class="clear"></div>
-		</div>
-	</header>
