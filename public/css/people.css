@@ -1,0 +1,66 @@
+/* BUTTONS */
+#buttons .static {
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 4px 10px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(0, 0, 0, 0.4)));
+  background-color: #999 !important;
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+  -webkit-user-select: none;
+  -webkit-border-radius: 5px;
+  text-decoration: none;
+}
+#buttons .hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.4)), to(rgba(0, 0, 0, 0.3)));
+}
+#buttons .active {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.2)));
+}
+section#people {
+  margin-top: 20px;
+}
+section#people ul.list-people li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+section#people ul.list-people li h2.name {
+  font-weight: normal;
+  font-size: 20px;
+}
+section#people ul.list-people li h2.name a {
+  color: #164782;
+  text-decoration: none;
+}
+section#people ul.list-people li h2.name a:hover {
+  text-decoration: underline;
+}
+section#people .follow_button a {
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 4px 10px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(0, 0, 0, 0.4)));
+  background-color: #999 !important;
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+  -webkit-user-select: none;
+  -webkit-border-radius: 5px;
+  text-decoration: none;
+  text-decoration: none;
+  display: block;
+  font-size: 18px;
+  padding: 8px;
+  text-align: center;
+}
+section#people .follow_button a:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.4)), to(rgba(0, 0, 0, 0.3)));
+}
+section#people .follow_button a:active {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.2)));
+}
+section#people .follow_button a.follow {
+  background-color: #58d91a !important;
+}
+section#people .follow_button a.unfollow {
+  background-color: #d96c54 !important;
+}

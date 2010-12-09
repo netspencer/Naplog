@@ -1,0 +1,55 @@
+@import "function";
+@import "buttons";
+
+section#people {
+	margin-top:20px;
+	
+	ul.list-people {
+		li {
+			list-style:none;
+			margin-bottom:10px;
+			
+			h2.name {
+				font-weight:normal;
+				font-size:20px;
+				a {
+					color:#164782;
+					text-decoration:none;
+					&:hover {
+						text-decoration:underline;
+					}
+				}
+				
+			}
+		}
+	}
+	
+	.follow_button {
+		a {
+			#buttons > .static;
+			text-decoration:none;
+			display:block;
+			font-size:18px;
+			padding:8px;
+			text-align:center;
+			
+			&:hover {
+				#buttons > .hover;
+			}
+			
+			&:active {
+				#buttons > .active;
+			}
+			
+			&.follow {
+				background-color:#58d91a !important;
+			}
+			
+			&.unfollow {
+				background-color:#d96c54 !important;
+			}
+			
+		}
+	}
+	
+}

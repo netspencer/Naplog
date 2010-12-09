@@ -1,0 +1,152 @@
+@import "function";
+
+/* COLORS */
+
+@main_background: #eee;
+
+/* --- colors --- */
+
+body {
+	background:#FFF;
+	//background:url("http://www.mozilla.com/img/tignish/template/background-feature.jpg");
+	background:url("http://www.mozilla.com/img/tignish/template/background-tile.png");
+	background-repeat:repeat-x;
+	font-family:"HelveticaNeue", Helvetica, sans-serif;
+	&.landing_page {
+		background:url("http://mozcom-cdn.mozilla.net/img/tignish/home/feature-background-4.jpg");
+		background-repeat:repeat-x;
+	}
+}
+
+header {
+	display:none;
+	
+	width:100%;
+	.gradient(#0d1430, #141469);
+	background:url("../img/header_bg.png");
+	color:white;
+	
+	.container_12 {
+		padding:10px 0;
+	}
+	
+	h1 img {
+		height:50px;
+	}
+	
+	h2 {
+		font-size:24px;
+		font-weight:normal;
+		padding-top:12px;
+		color:#929599;
+		font-family:"HelveticaNeue-UltraLight", "HelveticaNeue", Helvetica, sans-serif;
+		text-align:center;
+	}
+}
+
+nav {
+	margin-top:20px;	
+	h1 {
+		padding:8px;
+		img {
+			height:40px;
+		}
+	}
+	
+	div.container_12 {
+		border-top:1px #16467f solid;
+		.border_radius(10px);
+		.gradient(#2b7ec2, #2671ad);
+		.box_shadow(rgba(0,0,0,0.5));
+	}
+	
+	ul.nav {
+		height:56px;
+		overflow:hidden;
+		>li {
+			padding-top:5px;
+			height:100%;
+		//	border-right:1px #16457c solid;
+			color:#FFF;
+			font-weight:normal;
+			
+			&.user {
+				width:180px;
+				text-align:center;
+			}
+			
+			&.left {
+				float:left;
+				
+				&.first {
+			//		border-left:1px #16457c solid;
+				}
+			}
+			
+			&.right {
+				float:right;
+				
+				&.first {
+			//		border-left:1px #16457c solid;
+				}
+			}
+			
+			&:hover, &.current {
+				.gradient(#2474d6, #2065b7);
+				color:#c0dbff;
+			}
+			
+			>a {
+				display:block;
+				padding:15px 30px;
+				color:inherit;
+				text-decoration:none;
+				font-family:"HelveticaNeue-Light", Helvetica, sans-serif;
+				font-size:18px;
+				text-shadow:#333 0px -1px 5px;
+			}
+		}
+	}
+	
+	ul.nav li:hover ul.sub {
+		display:block;
+	}
+	
+	ul.sub {
+		width:180px;
+		display:none;
+		.box_shadow(rgba(0,0,0,0.5));
+		background:#b7e0f0;
+		position:absolute;
+		li {
+			text-align:left;
+			color:#333;
+			&:hover {
+				background:#68b8f0;
+			}
+			
+			a {
+				padding:10px;
+				display:block;
+				text-decoration:none;
+				color:inherit;
+			}
+		}
+	}
+}
+
+footer {
+	padding:20px 0;
+	margin-top:20px;
+	color:#666;
+	text-align:center;
+	font-family:Georgia, serif;
+}
+
+div.avatar {
+	.box_shadow;
+	border:3px #FFF solid;
+	img {
+		width:100%;
+	}
+}

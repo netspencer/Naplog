@@ -1,0 +1,31 @@
+section#login {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  width: 400px;
+  margin: auto;
+  margin-top: 20px;
+  background: #FFF;
+  padding: 20px;
+  margin-bottom: 200px;
+  position: relative;
+}
+section#login h2 {
+  font-family: "HelveticaNeue-Light", "HelveticaNeue", Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+section#login p {
+  padding: 10px 0;
+  font-size: 18px;
+}
+section#login p span {
+  display: inline-block;
+  width: 100px;
+}
+section#login p input[type='text'], section#login p input[type='password'] {
+  width: 280px;
+  padding: 5px;
+  font-size: 18px;
+}

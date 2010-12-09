@@ -1,0 +1,17 @@
+.gradient(@from: rgba(255,255,255,0.2), @to: rgba(0,0,0,0.4)) {
+	background:(@from+@to)/2;
+	background: -webkit-gradient(linear, left top, left bottom, from(@from), to(@to));
+	background: -moz-linear-gradient(linear, left top, left bottom, from(@from), to(@to));
+}
+
+.box_shadow(@color: rgba(0, 0, 0, 0.199219)) {
+	-webkit-box-shadow: @color 1px 1px 5px;
+	-moz-box-shadow: @color 1px 1px 5px;
+	box-shadow: @color 1px 1px 5px;
+}
+
+.border_radius(@radius:5px) {
+	-moz-border-radius:@radius;
+	-webkit-border-radius:@radius;
+	border-radius:@radius;
+}

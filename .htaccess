@@ -1,0 +1,9 @@
+RewriteEngine on
+RewriteBase /
+RewriteCond $1 !^(index\.php|public|robots\.txt)
+RewriteRule ^(.*)$ index.php/$1 [L]
+AddHandler php5-script .php
+
+<FilesMatch “.(gif|jpg|jpeg|png|ico)$”>
+Header set Cache-Control “max-age=2592000″
+</FilesMatch>

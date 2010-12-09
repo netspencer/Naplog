@@ -1,0 +1,35 @@
+@import "function";
+@import "buttons";
+
+section#user {
+	margin-top:20px;
+	
+	.follow_button {
+		a {
+			#buttons > .static;
+			text-decoration:none;
+			display:inline-block;
+			font-size:22px;
+			padding:10px;
+			width:100px;
+			text-align:center;
+			
+			&:hover {
+				#buttons > .hover;
+			}
+			
+			&:active {
+				#buttons > .active;
+			}
+			
+			&.follow {
+				background-color:#58d91a !important;
+			}
+			
+			&.unfollow {
+				background-color:#d96c54 !important;
+			}
+			
+		}
+	}
+}

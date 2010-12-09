@@ -1,0 +1,136 @@
+@import "function";
+
+section#new_dream {
+	margin-top:20px;
+	
+	.banner {
+		//background:url("../img/bamboo.jpg");
+		margin-bottom:10px;
+		
+		p {
+			font-size:62px;
+		//	color:#FFF;
+			color:#333;
+		//	padding:20px;
+			font-weight:bold;
+		}
+	}
+	
+	.errors {
+		.border_radius(8px);
+		.box_shadow;
+		background:#d99d88;
+		margin-bottom:20px;
+		
+		p {
+			padding:20px;
+			font-size:20px;
+			text-align:center;
+		}
+	}
+	
+	.widget {
+		h2 {
+			font-size:20px;
+			color:#666;
+			margin-bottom:10px;
+		}
+		textarea {
+			width:520px !important;
+			height:188px;
+			padding:10px;
+			font-size:16px;
+			color:#333;
+			line-height:1.5;
+			overflow:hidden;
+			border:0;
+			outline:0;
+			.border_radius;
+			border:1px #CCC solid;
+
+			&:focus {
+				border:1px #2a87fb solid;
+			}
+		}
+		input[type='submit'] {
+			display:block;
+		}
+		&.rate {
+			ul {
+				list-style:none;
+				display:block;
+				margin-bottom:20px;
+				li {
+					float:left;
+					padding:5px 10px;
+					opacity:0.3;
+					color:#333;
+					cursor:pointer;
+					
+					-webkit-user-select:none;
+					-moz-user-select:none;
+					
+					&.current {
+						opacity:1;
+						border-bottom:2px #333 solid;
+					}
+					
+					&.d1 {
+						background:#e60000;
+					}
+					&.d2 {
+						background:#e63a00;
+					}
+					&.d3 {
+						background:#e76300;
+					}
+					&.d4 {
+						background:#e88f00;
+					}
+					&.d5 {
+						background:#e9bd00;
+					}
+					&.d6 {
+						background:#f0e800;
+					}
+					&.d7 {
+						background:#ffff00;
+					}
+					&.d8 {
+						background:#bcf000;
+					}
+					&.d9 {
+						background:#8df000;
+					}
+					&.d10 {
+						background:#4af100;
+					}
+					&.d11 {
+						background:#20d000;
+					}
+					&.d12 {
+						background:#00a701;
+					}
+				}
+			}
+		}
+		
+	}
+}
+
+section#stats {
+	margin-top:20px;
+	
+	h2 {
+		font-size:20px;
+		color:#666;
+		margin-bottom:10px;
+	}
+	
+	h3 {
+		font-weight:normal;
+		text-align:center;
+		margin-top:10px;
+		color:#666;
+	}
+}

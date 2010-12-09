@@ -1,0 +1,155 @@
+@import "function";
+
+section#dreams {
+	margin-top:20px;
+	
+	div.ad {
+		background:#cee3e6;
+		padding:20px;
+		.box_shadow;
+		.border_radius;
+		
+		h3 {
+			text-align:center;
+			margin-bottom:10px;
+		}
+		
+		img {
+			width:100%;
+			opacity:0.7;
+			-webkit-transition: opacity 1s linear;
+		}
+		
+		&:hover {
+			img {
+				opacity:1;
+			}
+		}
+	}
+	
+	ul.sections {
+		list-style:none;
+		border-bottom:3px #666 solid;
+		padding-bottom:10px;
+		margin-bottom:10px;
+		li {
+			font-size:18px;
+			float:left;
+			&:hover {
+				color:#164782;
+			}
+			&.current {
+				font-weight:bold;
+			}
+			&:last-child:after {
+				content:'';
+				display:block;
+				clear:both;
+			}
+			a {
+				padding-right:30px;
+				color:inherit;
+				text-decoration:none;
+			}
+		}
+		&:after {
+			content:'';
+			display:block;
+			clear:both;
+		}
+	}
+}
+
+div.dreams {
+	.dream {
+		margin-bottom:10px;
+		padding:10px 0;
+		line-height:1.5;
+		color:#333;
+		text-shadow: 0px 1px 0px #e5e5ee;
+
+		h3.action {
+			a {
+				color:#164782;
+				text-decoration:none;
+				&:hover {
+					text-decoration:underline;
+				}
+			}
+		}
+
+		ul.buttons {
+			margin-top:10px;
+			list-style:none;
+			&:after {
+				content:'';
+				display:block;
+				clear:both;
+			}
+			li {
+				float:left;
+				background:#ddedff;
+				margin-right:10px;
+				.border_radius;
+				&:hover {
+					background:#cad9e9;
+				}
+				a {
+					padding:10px;
+					color:#666;
+					text-decoration:none;
+				}
+				&:last-child:after {
+					content:'';
+					display:block;
+					clear:both;
+				}
+			}
+		}
+
+		ul.likes {
+			margin-top:20px;
+			li {
+				list-style:none;
+				float:left;
+				img {
+					.box_shadow;
+					border:2px #FFF solid;
+					margin-right:5px;
+				}
+			}
+		}
+
+		div.content {
+			padding-right:20px;
+
+			a {
+				color:#164782;
+				text-decoration:none;
+
+				&:hover {
+					background:#FFF;
+				}
+			}
+		}
+
+		&:hover {
+		//	background:#FFF;
+		}
+	}
+}
+
+#load_more {
+	background:#d3d5d5;
+	.border_radius;
+	.box_shadow;
+	display:block;
+	color:#000;
+	text-decoration:none;
+	padding:5px;
+	text-align:center;
+
+	&:hover {
+		background:#c1c3c3;
+	}
+}

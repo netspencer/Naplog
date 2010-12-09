@@ -1,0 +1,120 @@
+section#new_dream {
+  margin-top: 20px;
+}
+section#new_dream .banner {
+  margin-bottom: 10px;
+}
+section#new_dream .banner p {
+  font-size: 62px;
+  color: #333;
+  font-weight: bold;
+}
+section#new_dream .errors {
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.199219) 1px 1px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.199219) 1px 1px 5px;
+  box-shadow: rgba(0, 0, 0, 0.199219) 1px 1px 5px;
+  background: #d99d88;
+  margin-bottom: 20px;
+}
+section#new_dream .errors p {
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+section#new_dream .widget h2 {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 10px;
+}
+section#new_dream .widget textarea {
+  width: 520px !important;
+  height: 188px;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  overflow: hidden;
+  border: 0;
+  outline: 0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px #CCC solid;
+}
+section#new_dream .widget textarea:focus {
+  border: 1px #2a87fb solid;
+}
+section#new_dream .widget input[type='submit'] {
+  display: block;
+}
+section#new_dream .widget.rate ul {
+  list-style: none;
+  display: block;
+  margin-bottom: 20px;
+}
+section#new_dream .widget.rate ul li {
+  float: left;
+  padding: 5px 10px;
+  opacity: 0.3;
+  color: #333;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+section#new_dream .widget.rate ul li.current {
+  opacity: 1;
+  border-bottom: 2px #333 solid;
+}
+section#new_dream .widget.rate ul li.d1 {
+  background: #e60000;
+}
+section#new_dream .widget.rate ul li.d2 {
+  background: #e63a00;
+}
+section#new_dream .widget.rate ul li.d3 {
+  background: #e76300;
+}
+section#new_dream .widget.rate ul li.d4 {
+  background: #e88f00;
+}
+section#new_dream .widget.rate ul li.d5 {
+  background: #e9bd00;
+}
+section#new_dream .widget.rate ul li.d6 {
+  background: #f0e800;
+}
+section#new_dream .widget.rate ul li.d7 {
+  background: #ffff00;
+}
+section#new_dream .widget.rate ul li.d8 {
+  background: #bcf000;
+}
+section#new_dream .widget.rate ul li.d9 {
+  background: #8df000;
+}
+section#new_dream .widget.rate ul li.d10 {
+  background: #4af100;
+}
+section#new_dream .widget.rate ul li.d11 {
+  background: #20d000;
+}
+section#new_dream .widget.rate ul li.d12 {
+  background: #00a701;
+}
+section#stats {
+  margin-top: 20px;
+}
+section#stats h2 {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 10px;
+}
+section#stats h3 {
+  font-weight: normal;
+  text-align: center;
+  margin-top: 10px;
+  color: #666;
+}
