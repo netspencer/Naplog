@@ -1,1 +1,10 @@
-section#settings{-webkit-box-shadow:rgba(0, 0, 0, 0.5) 1px 1px 5px;-moz-box-shadow:rgba(0, 0, 0, 0.5) 1px 1px 5px;box-shadow:rgba(0, 0, 0, 0.5) 1px 1px 5px;background:#FFF;-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;width:500px;padding:20px;margin:auto;margin-top:20px;}
+section#settings {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  background: #FFF;
+  width: 500px;
+  padding: 20px;
+  margin: auto;
+  margin-top: 20px;
+}
