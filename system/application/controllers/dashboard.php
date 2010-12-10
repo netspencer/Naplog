@@ -13,8 +13,9 @@ class Dashboard extends Controller {
 		$this->user->set();
 	}
 	
-	function test() {
-	    echo "spencer";
+	function cool($person = "spencer") {
+	    $person = ucfirst($person);
+	    echo "$person is cool";
 	}
 	
 	function index() {
