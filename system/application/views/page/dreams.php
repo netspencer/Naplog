@@ -2,9 +2,9 @@
 	<div class="container_12">
 		<div class="grid_8">
 			<ul class="sections">
-				<li><a href="<?=base_url()?>dreams/following">Following</a></li>
-				<li><a href="<?=base_url()?>dreams/popular">Popular</a></li>
-				<li><a href="<?=base_url()?>dreams/everything">Everything</a></li>
+				<li <?php if($current_section=="following") echo "class=\"current\""?>><a href="<?=base_url()?>dreams/following">Following</a></li>
+				<li <?php if($current_section=="popular") echo "class=\"current\""?>><a href="<?=base_url()?>dreams/popular">Popular</a></li>
+				<li <?php if($current_section=="everything") echo "class=\"current\""?>><a href="<?=base_url()?>dreams/everything">Everything</a></li>
 			</ul>
 			<?php $this->load->view("inc/list_dreams", array("dreams"=>$dreams));?>
 			<a href="#" id="load_more">Load More Dream</a>

@@ -8,6 +8,7 @@ class Dreams extends Controller {
 		$this->load->model("Comment_Model", "comment");
 		$this->user->set();
 		$this->user->require_login();
+		$this->current_section = "everything";
 	}
 	
 	function index() {
@@ -16,6 +17,7 @@ class Dreams extends Controller {
 	
 	function everything() {
 		$data['dreams'] = $this->dream->get_dreams();
+		$data['current_section'] = $this->current_section;
 		
 		$this->carabiner->css("dreams.css");
 		
@@ -25,11 +27,13 @@ class Dreams extends Controller {
 	}
 	
 	function following() {
+		$this->current_section = "following";
 		$this->dream->follow_only = true;
 		$this->everything();
 	}
 	
 	function popular() {
+		$this->current_section = "popular";
 		$this->dream->popular = true;
 		$this->everything();
 	}
