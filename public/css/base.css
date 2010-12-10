@@ -2,12 +2,12 @@
 /* --- colors --- */
 body {
   background: #FFF;
-  background: url("http://www.mozilla.com/img/tignish/template/background-tile.png");
+  background: url("../img/bg-tile.png");
   background-repeat: repeat-x;
   font-family: "HelveticaNeue", Helvetica, sans-serif;
 }
 body.landing_page {
-  background: url("http://mozcom-cdn.mozilla.net/img/tignish/home/feature-background-4.jpg");
+  background: url("../img/bg-dolphin.jpg");
   background-repeat: repeat-x;
 }
 header {
