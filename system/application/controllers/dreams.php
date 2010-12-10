@@ -16,7 +16,7 @@ class Dreams extends Controller {
 	
 	function everything() {
 		$data['dreams'] = $this->dream->get_dreams();
-				
+		
 		$this->carabiner->css("dreams.css");
 		
 		$this->theme->set_title("Dreams");
