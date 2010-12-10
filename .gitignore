@@ -2,4 +2,3 @@
 */system/logs/log-*.php
 */system/cache/*
 */system/cache/!index.html
-*/public/cache/*
