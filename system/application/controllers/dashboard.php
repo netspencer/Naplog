@@ -13,6 +13,10 @@ class Dashboard extends Controller {
 		$this->user->set();
 	}
 	
+	function test() {
+	    echo "spencer";
+	}
+	
 	function index() {
 		$this->load->library("form_validation");
 		$this->form_validation->set_message('required', "Nice try, but you can't dream about nothing, now can you?");
