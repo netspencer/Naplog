@@ -11,38 +11,15 @@ body.landing_page {
   background-repeat: repeat-x;
 }
 header {
-  display: none;
-  width: 100%;
-  background: #11144d;
-  background: -webkit-gradient(linear, left top, left bottom, from(#0d1430), to(#141469));
-  background: -moz-linear-gradient(linear, left top, left bottom, from(#0d1430), to(#141469));
-  background: url("../img/header_bg.png");
-  color: white;
-}
-header .container_12 {
-  padding: 10px 0;
-}
-header h1 img {
-  height: 50px;
-}
-header h2 {
-  font-size: 24px;
-  font-weight: normal;
-  padding-top: 12px;
-  color: #929599;
-  font-family: "HelveticaNeue-UltraLight", "HelveticaNeue", Helvetica, sans-serif;
-  text-align: center;
-}
-nav {
   margin-top: 20px;
 }
-nav h1 {
+header h1 {
   padding: 8px;
 }
-nav h1 img {
+header h1 img {
   height: 40px;
 }
-nav div.container_12 {
+header .container_12 {
   border-top: 1px #16467f solid;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -54,33 +31,33 @@ nav div.container_12 {
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
   box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
 }
-nav ul.nav {
+header ul.nav {
   height: 56px;
   overflow: hidden;
 }
-nav ul.nav > li {
+header ul.nav > li {
   padding-top: 5px;
   height: 100%;
   color: #FFF;
   font-weight: normal;
 }
-nav ul.nav > li.user {
+header ul.nav > li.user {
   width: 180px;
   text-align: center;
 }
-nav ul.nav > li.left {
+header ul.nav > li.left {
   float: left;
 }
-nav ul.nav > li.right {
+header ul.nav > li.right {
   float: right;
 }
-nav ul.nav > li:hover, nav ul.nav > li.current {
+header ul.nav > li:hover, header ul.nav > li.current {
   background: #226dc7;
   background: -webkit-gradient(linear, left top, left bottom, from(#2474d6), to(#2065b7));
   background: -moz-linear-gradient(linear, left top, left bottom, from(#2474d6), to(#2065b7));
   color: #c0dbff;
 }
-nav ul.nav > li > a {
+header ul.nav > li > a {
   display: block;
   padding: 15px 30px;
   color: inherit;
@@ -89,10 +66,10 @@ nav ul.nav > li > a {
   font-size: 18px;
   text-shadow: #333333 0px -1px 5px;
 }
-nav ul.nav li:hover ul.sub {
+header ul.nav li:hover ul.sub {
   display: block;
 }
-nav ul.sub {
+header ul.sub {
   width: 180px;
   display: none;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
@@ -101,14 +78,14 @@ nav ul.sub {
   background: #b7e0f0;
   position: absolute;
 }
-nav ul.sub li {
+header ul.sub li {
   text-align: left;
   color: #333;
 }
-nav ul.sub li:hover {
+header ul.sub li:hover {
   background: #68b8f0;
 }
-nav ul.sub li a {
+header ul.sub li a {
   padding: 10px;
   display: block;
   text-decoration: none;
