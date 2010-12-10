@@ -10,7 +10,7 @@
 				<li class="left <?php if($current=="people") echo "current"; ?>"><a href="<?=base_url()?>people">People</a></li>
 				<li class="left <?php if($current=="explore") echo "current"; ?>"><a href="<?=base_url()?>explore">Explore</a></li>
 				<?php if($username):?>
-				<li class="right user first <?php if($current=="account") echo "current"; ?>"><a href="<?=base_url()?>users"><?=$username?></a>
+				<li class="right user first <?php if($current=="account") echo "current"; ?>"><a href="<?=base_url()?>user/<?=$username?>"><?=$username?></a>
 					<ul class="sub">
 						<li><a href="<?=base_url()?>settings">Settings</a></li>
 						<li><a href="<?=base_url()?>auth/logout">Logout</a></li>
