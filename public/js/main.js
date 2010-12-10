@@ -1,4 +1,4 @@
-var base_url = "http://spencer.local/";
+var base_url = "/";
 
 var page = 1;
 
