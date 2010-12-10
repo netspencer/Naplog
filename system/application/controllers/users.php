@@ -30,7 +30,7 @@ class Users extends Controller {
 		$this->carabiner->css("dreams.css");
 		$this->carabiner->css("user.css");
 		
-		$this->theme->set_title($data['dreams'][0]->fullname);
+		$this->theme->set_title($user->fullname);
 		if ($user == $this->user->data->username) $this->theme->set_current("account");
 		$this->theme->load_page("user", $data);
 	}
