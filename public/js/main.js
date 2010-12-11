@@ -74,4 +74,9 @@ $(document).ready(function() {
 		}, "json");
 		return false;
 	});
+	
+	$("a#set_new_password").click(function() {
+		$(this).hide();
+		$("#new_password").fadeIn();
+	});
 });

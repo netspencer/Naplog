@@ -40,12 +40,30 @@ class Users extends Controller {
 		$this->load->helper("form");
 		$this->carabiner->css("settings.css");
 		
-		$this->form_validation->set_rules("username", "Username", "required");
-		$this->form_validation->set_rules("password", "Password", "required");
-				
-		$this->theme->set_title("Settings");
-		$this->theme->set_current("account");
-		$this->theme->load_page("user_settings", $data);
+		$this->form_validation->set_rules("fullname", "fullname", "required");
+		$this->form_validation->set_rules("nickname", "nickname", "required");
+		$this->form_validation->set_rules("username", "username", "required");
+		$this->form_validation->set_rules("email", "email", "required|valid_email");
+		
+		$data['user'] = $this->user->data;
+		
+		if ($this->form_validation->run()) {
+			$modify['fullname'] = $_POST['fullname'];
+			$modify['nickname'] = $_POST['nickname'];
+			$modify['username'] = $_POST['username'];
+			$modify['email'] = $_POST['email'];
+			
+			$this->user->modify_user(null, $modify);
+			if ($_POST['password']) {
+				$this->user->change_password(null, $_POST['password']);
+			}
+			redirect('/settings');
+		} else {
+			$this->theme->set_title("Settings");
+			$this->theme->set_current("account");
+			$this->theme->load_page("user_settings", $data);
+		}
+		
 	}
 	
 		

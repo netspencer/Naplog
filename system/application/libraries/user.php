@@ -62,6 +62,35 @@ class User {
 		$this->CI->db->update("users", $data);
 	}
 	
+	function modify_user($user = null, $modify) {
+		if (!$user) $user = (int) $this->data->user_id;
+		if (is_int($user)) {
+			$data['user_id'] = $user;
+		} else {
+			$data['username'] = $user;
+		}
+		
+		$this->CI->db->where($data);
+		$this->CI->db->update("users", $modify);
+	}
+	
+	function change_password($user = null, $pass) {
+		if (!$user) $user = (int) $this->data->user_id;
+		$pass = md5($pass);
+		
+		if (is_int($user)) {
+			$data['user_id'] = $user;
+		} else {
+			$data['username'] = $user;
+		}
+		$this->CI->db->where($data);
+		$data = array();
+		$data['password'] = $pass;
+		$this->CI->db->update("users", $data);
+		
+		return $pass;
+	}
+		
 	private function _auth_user($user, $pass = null) {
 		if ($pass) {
 			$pass = md5($pass);

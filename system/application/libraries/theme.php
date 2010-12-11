@@ -24,7 +24,6 @@ class Theme {
 	function load_base_css() {
 		$this->CI->carabiner->css("reset.css");
 		$this->CI->carabiner->css("960.css");
-		//$this->CI->carabiner->css("tipsy.css");
 		$this->CI->carabiner->css("base.css");
 	}
 	

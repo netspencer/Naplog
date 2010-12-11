@@ -1,10 +1,83 @@
 @import "function";
+@import "buttons";
 
 section#settings {
-	.box_shadow(rgba(0,0,0,0.5));
-	background:#FFF;
-	width:500px;
-	padding:20px;
 	margin:auto;
 	margin-top:20px;
+	
+	div.middle {
+		.box_shadow(rgba(0,0,0,0.5));
+		background:#FFF;
+		padding:20px;
+	}
+
+	h1.title {
+		font-size:22px;
+		font-weight:normal;
+		margin-bottom:10px;
+		img {
+			vertical-align:middle;
+			.border_radius(4px);
+			margin-right:10px;
+		}
+	}
+	
+	a#set_new_password {
+		color:#666;
+		text-decoration:none;
+		padding:10px;
+		background:#EEE;
+		display:block;
+		width:180px;
+		text-align:center;
+		margin:auto;
+	}
+	
+	div.form-row {
+		margin:10px 0;
+		
+		label {
+			display:inline-block;
+			width:120px;
+			margin-right:10px;
+			color:#666;
+		}
+		input[type='text'], input[type='password'] {
+			font-size:16px;
+			width:430px;
+			padding:6px;
+			outline:none;
+			border:1px #CCC solid;
+			.border_radius;
+			
+			&:focus {
+				border-color:#2474d6;
+			}
+		}
+		
+		input[type='submit'] {
+			float:right;
+			#buttons > .static;
+			background-color:#b3d9e6 !important;
+			text-decoration:none;
+			display:block;
+			font-size:18px;
+			padding:8px;
+			text-align:center;
+			
+			&:hover {
+				#buttons > .hover;
+			}
+			
+			&:active {
+				#buttons > .active;
+			}
+			
+		}
+		
+		&.hidden {
+			display:none;
+		}
+	}
+	
 }
