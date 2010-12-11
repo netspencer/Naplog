@@ -7,7 +7,7 @@ body {
   font-family: "HelveticaNeue", Helvetica, sans-serif;
 }
 body.landing_page {
-  background: url("../img/bg-dolphin.jpg");
+  background: url("../img/bg.png");
   background-repeat: repeat-x;
 }
 header {
