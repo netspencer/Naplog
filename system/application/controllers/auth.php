@@ -20,7 +20,8 @@ class Auth extends Controller {
 			
 			if ($this->user->login($user, $pass)) redirect();
 		}
-			
+		
+		$this->theme->body_class = "landing_page";
 		$this->carabiner->css("login.css");
 
 		$this->theme->set_title("Login");
