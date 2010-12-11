@@ -7,8 +7,10 @@ class Auth extends Controller {
 		$this->load->helper("form");
 		$this->load->library("form_validation");
 		$this->load->library("input");
+		$this->load->library("twitter");
+		$this->load->library("session");
 	}
-	
+		
 	function login() {
 		$this->form_validation->set_message("badpass", "The username or password are incorrect.");
 		$this->form_validation->set_rules("username", "Username", "required|trim");
@@ -31,6 +33,14 @@ class Auth extends Controller {
 	function logout() {
 		$this->user->logout();
 		redirect();
+	}
+	
+	function twitter() {
+		$consumer_key = $this->config->item('twitter_consumer_key');
+		$consumer_key_secret = $this->config->item('twitter_consumer_key_secret');
+			
+		$auth = $this->twitter->oauth($consumer_key, $consumer_key_secret, NULL, NULL);
+		$this->user->add_twitter_tokens((int)$this->user->data->user_id, $auth);
 	}
 	
 }

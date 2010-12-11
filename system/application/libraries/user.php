@@ -40,9 +40,26 @@ class User {
 		}
 	}
 	
-	function get_user($id) {
-		$user = $this->CI->db->get_where("users", array("user_id"=>$id));
+	function get_user($user) {
+		if (is_int($user)) {
+			$data['user_id'] = $user;
+		} else {
+			$data['username'] = $user;
+		}
+		$user = $this->CI->db->get_where("users", $data);
 		return $user->row();
+	}
+	
+	function add_twitter_tokens($user, $tokens) {
+		if (is_int($user)) {
+			$data['user_id'] = $user;
+		} else {
+			$data['username'] = $user;
+		}
+		$this->CI->db->where($data);
+		$data = array();
+		$data['twitter_tokens'] = json_encode($tokens);
+		$this->CI->db->update("users", $data);
 	}
 	
 	private function _auth_user($user, $pass = null) {

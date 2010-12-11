@@ -51,13 +51,7 @@ class Users_Model extends Model {
 	}
 	
 	function get_user($user) {
-		if (is_int($user)) {
-			$data['user_id'] = $user;
-		} else {
-			$data['username'] = $user;
-		}
-		$query = $this->db->get_where("users", $data);
-		$user = $query->row();
+		$user = $this->user->get_user($user);
 		
 		if ($this->user->data->user_id == $user->user_id) {
 			$user->is_self = true;
