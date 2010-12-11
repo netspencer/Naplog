@@ -6,6 +6,7 @@ class People extends Controller {
 		parent::Controller();
 		$this->load->model("Users_Model");
 		$this->load->model("Follow_Model");
+		$this->load->library("Twitter");
 		$this->user->set();
 		$this->user->require_login();
 		
@@ -25,8 +26,8 @@ class People extends Controller {
 		
 	}
 	
-	function follow($id) {
-		$this->Users_Model->follow($id);
+	function twitter() {
+		print_r($this->users_model->list_twitter_following("netspencer"));		
 	}
 	
 }
