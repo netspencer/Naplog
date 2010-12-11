@@ -6,7 +6,7 @@ section#new_dream .banner {
 }
 section#new_dream .banner p {
   font-size: 62px;
-  color: #333;
+  color: red;
   font-weight: bold;
 }
 section#new_dream .errors {
