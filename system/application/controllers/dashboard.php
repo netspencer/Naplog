@@ -52,10 +52,9 @@ class Dashboard extends Controller {
 				$this->theme->load_page("welcome");
 				*/
 				$this->theme->body_class = "landing_page";
-				$this->carabiner->css("login.css");
+				$this->carabiner->css("welcome.css");
 
-				$this->theme->set_title("Login");
-				$this->theme->load_page("login", $data);
+				$this->theme->load_page("welcome", $data);
 				
 			}
 		}
