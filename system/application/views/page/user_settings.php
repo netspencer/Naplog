@@ -14,11 +14,15 @@
 				</div>
 				<div class="form-row">
 					<label for="username">Username</label>
-					<input readonly="readonly" type="text" value="<?=$user->username?>" name="username" />
+					<input type="text" value="<?=$user->username?>" name="username" />
 				</div>
 				<div class="form-row">
 					<label for="email">Email</label>
 					<input type="text" value="<?=$user->email?>" name="email" />
+				</div>
+				<div class="form-row">
+					<label for="email">Twitter</label>
+					<input type="text" value="<?=$user->twitter?>" name="twitter" />
 				</div>
 				<div class="form-row"><a href="#" id="set_new_password">Set a new password</a></div>
 				<div class="form-row hidden" id="new_password">

@@ -14,7 +14,7 @@ class User {
 	function login($user, $pass) {
 		$this->logout();
 		if ($this->_auth_user($user, $pass)) {
-			$this->CI->session->set_userdata("user", $user);
+			$this->CI->session->set_userdata("user", $this->data->user_id);
 			return true;
 		} else {
 			return false;
@@ -36,7 +36,7 @@ class User {
 	private function _expand_session() {
 		$user = $this->CI->session->userdata("user");
 		if ($user) {
-			$this->_auth_user($user);
+			$this->_auth_user((int)$user);
 		}
 	}
 	
@@ -94,10 +94,16 @@ class User {
 	private function _auth_user($user, $pass = null) {
 		if ($pass) {
 			$pass = md5($pass);
-			$user = $this->CI->db->get_where("users", array('username'=>$user, 'password'=>$pass));
-		} else {
-			$user = $this->CI->db->get_where("users", array('username'=>$user));
+			$this->CI->db->where("password", $pass);
 		}
+		
+		if (is_int($user)) {
+			$this->CI->db->where("user_id", $user);
+		} else {
+			$this->CI->db->where("username", $user);
+		}
+		
+		$user = $this->CI->db->get("users");
 		
 		if ($user->num_rows() > 0) {
 			$this->logged_in = true;
