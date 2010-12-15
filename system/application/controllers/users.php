@@ -52,6 +52,7 @@ class Users extends Controller {
 			$modify['nickname'] = $_POST['nickname'];
 			$modify['username'] = $_POST['username'];
 			$modify['email'] = $_POST['email'];
+			$modify['twitter'] = strip_twitter($_POST['twitter']);
 			
 			$this->user->modify_user(null, $modify);
 			if ($_POST['password']) {

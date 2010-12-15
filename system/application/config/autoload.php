@@ -51,7 +51,7 @@ $autoload['libraries'] = array('database', 'theme', 'carabiner', 'user', 'sessio
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url', 'date');
+$autoload['helper'] = array('url', 'date', 'naplog');
 
 
 /*
