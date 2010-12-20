@@ -62,24 +62,66 @@ section#dreams {
 
 div.dreams {
 	.dream {
+		.border_radius;
+		border:2px #b7ccc9 solid;
+		background:#FFF;
 		margin-bottom:10px;
-		padding:10px 0;
 		line-height:1.5;
 		color:#333;
-		text-shadow: 0px 1px 0px #e5e5ee;
+	//	text-shadow: 0px 1px 0px #e5e5ee;
+				
+		div.left {
+			float:left;
+			width:60px;
+			display:inline-block;
+			margin-right:20px;
+		}
+		
+		div.right {
+			display:inline-block;
+			float:left;
+			width:510px;
+		}
+		
+		div.top {
+			padding:10px;
+		}
+		
+		div.bottom {
+			padding:5px 10px;
+			background:#EEE;
+			border-top:1px #CCC solid;
+		}
 
 		h3.action {
+			font-size:14px;
+			font-weight:normal;
+			color:#666;
 			a {
-				color:#164782;
+				color:inherit;
 				text-decoration:none;
 				&:hover {
 					text-decoration:underline;
 				}
 			}
 		}
+		
+		div.content {
+			padding-right:20px;
+			font-size:18px;
+
+			a {
+				color:#164782;
+				text-decoration:none;
+
+				&:hover {
+					background:#FFF;
+				}
+			}
+		}
 
 		ul.buttons {
-			margin-top:10px;
+			display:none;
 			list-style:none;
 			&:after {
 				content:'';
@@ -108,7 +150,6 @@ div.dreams {
 		}
 
 		ul.likes {
-			margin-top:20px;
 			li {
 				list-style:none;
 				float:left;
@@ -118,23 +159,6 @@ div.dreams {
 					margin-right:5px;
 				}
 			}
-		}
-
-		div.content {
-			padding-right:20px;
-
-			a {
-				color:#164782;
-				text-decoration:none;
-
-				&:hover {
-					background:#FFF;
-				}
-			}
-		}
-
-		&:hover {
-		//	background:#FFF;
 		}
 	}
 }
