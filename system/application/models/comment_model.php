@@ -5,7 +5,7 @@ class Comment_Model extends Model {
 	function Comment_Model() {
 		parent::Model();
 		$this->user->set();
-		$this->load->library("Notify");
+	//	$this->load->library("Notify");
 	}
 	
 	var $content = "";
@@ -65,10 +65,10 @@ class Comment_Model extends Model {
 		$this->db->select("likes.user_id, users.twitter, users.username");
 		$this->db->join("users", "users.user_id = likes.user_id", "left");
 		$likes = $this->db->get_where("likes", array("dream_id"=>$dream_id));
-		$this->likes->list = $likes->result();
-		$this->likes->num = $likes->num_rows();
+		$likes->list = $likes->result();
+		$likes->num = $likes->num_rows();
 				
-		return $this->likes;
+		return $likes;
 	}
 		
 }

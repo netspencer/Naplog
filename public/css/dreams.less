@@ -92,19 +92,6 @@ div.dreams {
 			background:#EEE;
 			border-top:1px #CCC solid;
 		}
-
-		h3.action {
-			font-size:14px;
-			font-weight:normal;
-			color:#666;
-			a {
-				color:inherit;
-				text-decoration:none;
-				&:hover {
-					text-decoration:underline;
-				}
-			}
-		}
 		
 		div.content {
 			padding-right:20px;
@@ -120,8 +107,24 @@ div.dreams {
 			}
 		}
 
+		h3.action {
+			width:50%;
+			float:left;
+			font-size:14px;
+			font-weight:normal;
+			color:#666;
+			a {
+				color:inherit;
+				text-decoration:none;
+				&:hover {
+					text-decoration:underline;
+				}
+			}
+		}
+
 		ul.buttons {
-			display:none;
+			max-width:50%;
+			float:right;
 			list-style:none;
 			&:after {
 				content:'';
@@ -131,7 +134,7 @@ div.dreams {
 			li {
 				float:left;
 				background:#ddedff;
-				margin-right:10px;
+				margin-left:10px;
 				.border_radius;
 				&:hover {
 					background:#cad9e9;

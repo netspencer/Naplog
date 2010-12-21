@@ -83,18 +83,6 @@ div.dreams .dream div.bottom {
   background: #EEE;
   border-top: 1px #CCC solid;
 }
-div.dreams .dream h3.action {
-  font-size: 14px;
-  font-weight: normal;
-  color: #666;
-}
-div.dreams .dream h3.action a {
-  color: inherit;
-  text-decoration: none;
-}
-div.dreams .dream h3.action a:hover {
-  text-decoration: underline;
-}
 div.dreams .dream div.content {
   padding-right: 20px;
   font-size: 18px;
@@ -106,8 +94,23 @@ div.dreams .dream div.content a {
 div.dreams .dream div.content a:hover {
   background: #FFF;
 }
+div.dreams .dream h3.action {
+  width: 50%;
+  float: left;
+  font-size: 14px;
+  font-weight: normal;
+  color: #666;
+}
+div.dreams .dream h3.action a {
+  color: inherit;
+  text-decoration: none;
+}
+div.dreams .dream h3.action a:hover {
+  text-decoration: underline;
+}
 div.dreams .dream ul.buttons {
-  display: none;
+  max-width: 50%;
+  float: right;
   list-style: none;
 }
 div.dreams .dream ul.buttons:after {
@@ -118,7 +121,7 @@ div.dreams .dream ul.buttons:after {
 div.dreams .dream ul.buttons li {
   float: left;
   background: #ddedff;
-  margin-right: 10px;
+  margin-left: 10px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;

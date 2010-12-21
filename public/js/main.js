@@ -31,7 +31,7 @@ $(document).ready(function() {
 		
 		$.post(base_url+"api/get_likes", {dream_id:id, like:true}, function(data) {
 			if (dream.find("ul.likes").length==0) {
-				dream.append(data.html);
+				dream.find("div.bottom").append(data.html);
 				like_element.text(data.num_likes+" likes");
 			}
 		}, "json");

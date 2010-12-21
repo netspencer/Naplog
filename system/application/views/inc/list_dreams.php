@@ -15,15 +15,13 @@
 			<div class="clear"></div>
 		</div>
 		<div class="bottom">
-			<?php if($dream->anonymous):?>
-			<h3 class="action"><?=$dream->anon_nickname?> recorded a <?=$dream->sleep_hours?> hour nap for <?=$dream->date_for?></h3>
-			<?php else:?>
-			<h3 class="action"><a href="<?=base_url()?>user/<?=$dream->username?>"><?=$dream->fullname?></a> recorded a <?=$dream->sleep_hours?> hour nap for <?=$dream->date_for?></h3>
-			<?php endif;?>
+			<h3 class="action"><a href="<?=base_url()?>user/<?=$dream->username?>"><?=$dream->fullname?></a> &mdash; <span class="timespan" rel="<?=$dream->created_at?>" title="<?=$dream->full_timestamp?>"><?=$dream->smart_timestamp?></span></h3>
 			<ul class="buttons">
 				<li><a rel="like" href="#"><?=$dream->num_likes?> likes</a></li>
 				<li><a href="#" rel="comment"><?=$dream->num_comments?> comments</a></li>
 			</ul>
+			<div class="clear"></div>
+			<?php $this->load->view("inc/list_likes", array("likes"=>$dream->likes->list))?>
 		</div>
 	</div>
 <?php endforeach;?>
