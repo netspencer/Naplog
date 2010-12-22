@@ -2,7 +2,8 @@
 	<div class="container_12">
 		<div class="grid_8">
 			<?php $this->load->view("inc/list_dreams", array("dreams"=>$dreams));?>
-			<?php $this->load->view("inc/list_likes", array("likes"=>$likes->list));?>
+			<?php $this->load->view("inc/list_likes", array("likes"=>$likes->list, "num_likes"=>$likes->num));?>
+			<?php $this->load->view("inc/list_comments", array("comments"=>$comments));?>
 		</div>
 		<div class="grid_4">
 			<div class="ad">	

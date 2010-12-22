@@ -10,7 +10,6 @@ class Comment_Model extends Model {
 	
 	var $content = "";
 	var $dream_id = "";
-	var $comments = null;
 	
 	function test() {
 	 	return "test";
@@ -71,10 +70,9 @@ class Comment_Model extends Model {
 	}
 	
 	function get_comments($dream_id) {
+		$this->db->join("users", "users.user_id = comments.user_id");
 		$comments = $this->db->get_where("comments", array("dream_id"=>$dream_id));
-		$this->comments = $comments->result();
-		
-		return $this->comments;
+		return $comments->result();
 	}
 	
 	function get_likes($dream_id, $limit=14) {

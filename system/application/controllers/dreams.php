@@ -41,7 +41,9 @@ class Dreams extends Controller {
 	function view($id) {
 		$data['dreams'] = $this->Dream_Model->get_dreams($id);
 		$data['likes'] = $this->Comment_Model->get_likes($id, false);
-		
+		$data['comments'] = $this->Comment_Model->get_comments($id);
+		if (!$data['dreams']) redirect('/');
+				
 		$this->carabiner->css("dreams.css");
 		
 		$this->theme->set_title("Dream ".$id);
