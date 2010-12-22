@@ -54,6 +54,17 @@ section#dreams ul.sections:after {
   display: block;
   clear: both;
 }
+section#dreams ul.likes li {
+  list-style: none;
+  float: left;
+}
+section#dreams ul.likes li img {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.199219) 1px 1px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.199219) 1px 1px 5px;
+  box-shadow: rgba(0, 0, 0, 0.199219) 1px 1px 5px;
+  border: 2px #FFF solid;
+  margin-right: 5px;
+}
 div.dreams .dream {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -142,17 +153,6 @@ div.dreams .dream ul.buttons li:last-child:after {
   content: '';
   display: block;
   clear: both;
-}
-div.dreams .dream ul.likes li {
-  list-style: none;
-  float: left;
-}
-div.dreams .dream ul.likes li img {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.199219) 1px 1px 5px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.199219) 1px 1px 5px;
-  box-shadow: rgba(0, 0, 0, 0.199219) 1px 1px 5px;
-  border: 2px #FFF solid;
-  margin-right: 5px;
 }
 #load_more {
   background: #d3d5d5;

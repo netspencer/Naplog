@@ -44,7 +44,10 @@ $route['default_controller'] = "dashboard";
 $route['scaffolding_trigger'] = "";
 
 $route['user/(:any)'] = "users/view/$1";
+$route['dream/(:num)'] = "dreams/view/$1";
+
 $route['settings'] = "users/settings";
+
 
 /* End of file routes.php */
 /* Location: ./system/application/config/routes.php */

@@ -39,23 +39,16 @@ class Dreams extends Controller {
 	}
 	
 	function view($id) {
-		echo $this->comment->num_comments($id);
+		$data['dreams'] = $this->Dream_Model->get_dreams($id);
+		$data['likes'] = $this->Comment_Model->get_likes($id, false);
+		
+		$this->carabiner->css("dreams.css");
+		
+		$this->theme->set_title("Dream ".$id);
+		$this->theme->load_page("dream", $data);
+		
 	}
 	
-	function like($id) {
-		$this->comment->dream_id = $id;
-		$this->comment->like();
-		
-		redirect("dreams");
-	}
-	
-	function sample_comment() {
-		$this->comment->dream_id = 59;
-		$this->comment->content = "Oh hello!";
-		$this->comment->insert_comment();
-		
-		echo "it worked";
-	}
 }
 
 ?>

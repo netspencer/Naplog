@@ -37,7 +37,7 @@ class Comment_Model extends Model {
 		return $return;
 	}
 	
-	function user_liked($user_id, $dream_id = null) {
+	function user_liked($user_id = null, $dream_id = null) {
 		if ($dream_id) {
 			$this->db->where("user_id", $user_id);
 		} else {
@@ -78,7 +78,7 @@ class Comment_Model extends Model {
 	}
 	
 	function get_likes($dream_id, $limit=14) {
-		$this->db->limit($limit);
+		if ($limit) $this->db->limit($limit);
 		$this->db->select("likes.user_id, users.twitter, users.username");
 		$this->db->join("users", "users.user_id = likes.user_id", "left");
 		$likes = $this->db->get_where("likes", array("dream_id"=>$dream_id));

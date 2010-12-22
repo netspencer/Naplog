@@ -15,7 +15,7 @@
 			<div class="clear"></div>
 		</div>
 		<div class="bottom">
-			<h3 class="action"><a href="<?=base_url()?>user/<?=$dream->username?>"><?=$dream->fullname?></a> &mdash; <span class="timespan" rel="<?=$dream->created_at?>" title="<?=$dream->full_timestamp?>"><?=$dream->smart_timestamp?></span></h3>
+			<h3 class="action"><a href="<?=base_url()?>user/<?=$dream->username?>"><?=$dream->fullname?></a> &mdash; <a href="<?=base_url()?>dream/<?=$dream->dream_id?>"><span class="timespan" rel="<?=$dream->created_at?>" title="<?=$dream->full_timestamp?>"><?=$dream->smart_timestamp?></span></a></h3>
 			<ul class="buttons">
 				<li><a rel="like" <?php if($dream->user_liked): ?>class="liked"<?php endif;?> href="#"><?=$dream->num_likes?> likes</a></li>
 				<li><a href="#" rel="comment"><?=$dream->num_comments?> comments</a></li>

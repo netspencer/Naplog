@@ -7,6 +7,8 @@ class Users extends Controller {
 		$this->load->model("Dream_Model", "dream");
 		$this->load->model("Users_Model");
 		$this->load->model("Follow_Model", "follow");
+		$this->load->model("Comment_Model", "comment");
+		
 		$this->user->set();
 	}
 	

@@ -40,12 +40,13 @@ class Dream_Model extends Model {
 		return $dream->row();
 	}
 	
-	function get_dreams() {
+	function get_dreams($id = null) {
 		$user_id = $this->user->data->user_id;
 		$this->db->select("dreams.*, users.fullname, users.username, users.twitter, (SELECT COUNT(comments.comment_id) FROM comments WHERE comments.dream_id=dreams.dream_id) AS num_comments, (SELECT COUNT(likes.user_id) FROM likes WHERE likes.dream_id=dreams.dream_id) AS num_likes", FALSE);
 		$this->db->from("dreams");
 		$this->db->distinct();
 		$this->db->join("users", "users.user_id = dreams.user_id", "left");
+		if ($id) $this->db->where("dream_id", $id);
 		if ($this->follow_only) $this->db->join("(SELECT follow_id FROM follows WHERE follows.user_id='$user_id') AS something", "dreams.user_id=follow_id");
 		if ($this->from_user) $this->db->where('username', $this->from_user);
 		if ($this->popular) {
@@ -69,7 +70,7 @@ class Dream_Model extends Model {
 			$dream->links = $this->find_links(&$dream->content);
 			
 			$dream->user_liked = $this->Comment_Model->user_liked($this->user->data->user_id, $dream->dream_id);
-			$dream->likes = $this->Comment_Model->get_likes($dream->dream_id);
+			//$dream->likes = $this->Comment_Model->get_likes($dream->dream_id);
 		}
 	}
 	
