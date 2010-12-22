@@ -14,8 +14,12 @@ class API extends REST_Controller {
 	
 	function like_dream_post() {
 		$this->comment->dream_id = $this->post("dream_id");
-		$echo = $this->comment->like();
-		$this->response($echo);
+		$response = $this->comment->like();
+		
+		$likes = $this->comment->get_likes($this->post("dream_id"));
+		
+		$response['num_likes'] = $likes->num;
+		$this->response($response);
 	}	
 	
 	function comment_dream_post() {
@@ -79,7 +83,6 @@ class API extends REST_Controller {
 				$return = $this->follow->toggle($follow_id);
 				$response['action'] = $return;
 				$response['user_id'] = $follow_id;
-				
 				break;
 			default:
 				$this->follow->follow($follow_id);

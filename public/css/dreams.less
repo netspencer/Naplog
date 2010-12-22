@@ -133,16 +133,20 @@ div.dreams {
 			}
 			li {
 				float:left;
-				background:#ddedff;
 				margin-left:10px;
-				.border_radius;
-				&:hover {
-					background:#cad9e9;
-				}
 				a {
-					padding:10px;
+					padding:5px;
 					color:#666;
 					text-decoration:none;
+					background:#ddedff;
+					.border_radius;
+					&:hover {
+						background:#cad9e9;
+					}
+					&.liked {
+						color:#FFF;
+						background:#5ba4ec;
+					}
 				}
 				&:last-child:after {
 					content:'';

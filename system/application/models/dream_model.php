@@ -68,6 +68,7 @@ class Dream_Model extends Model {
 			$dream->date_for = date("l", $dream->created_at);
 			$dream->links = $this->find_links(&$dream->content);
 			
+			$dream->user_liked = $this->Comment_Model->user_liked($this->user->data->user_id, $dream->dream_id);
 			$dream->likes = $this->Comment_Model->get_likes($dream->dream_id);
 		}
 	}

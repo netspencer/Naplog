@@ -26,7 +26,12 @@ $(document).ready(function() {
 		id = id.substr(6);
 				
 		$.post(base_url+"api/like_dream", {dream_id:id}, function(data) {
-			// do nothing
+			dream.find("a[rel='like']").text(data.num_likes+" likes");
+			if (data.action=="liked") {
+				dream.find("a[rel='like']").addClass("liked");
+			} else {
+				dream.find("a[rel='like']").removeClass("liked");
+			}
 		}, "json");
 		
 		return false;

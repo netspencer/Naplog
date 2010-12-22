@@ -120,19 +120,23 @@ div.dreams .dream ul.buttons:after {
 }
 div.dreams .dream ul.buttons li {
   float: left;
-  background: #ddedff;
   margin-left: 10px;
+}
+div.dreams .dream ul.buttons li a {
+  padding: 5px;
+  color: #666;
+  text-decoration: none;
+  background: #ddedff;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
-div.dreams .dream ul.buttons li:hover {
+div.dreams .dream ul.buttons li a:hover {
   background: #cad9e9;
 }
-div.dreams .dream ul.buttons li a {
-  padding: 10px;
-  color: #666;
-  text-decoration: none;
+div.dreams .dream ul.buttons li a.liked {
+  color: #FFF;
+  background: #5ba4ec;
 }
 div.dreams .dream ul.buttons li:last-child:after {
   content: '';
