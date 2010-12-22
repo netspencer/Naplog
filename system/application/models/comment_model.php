@@ -5,7 +5,7 @@ class Comment_Model extends Model {
 	function Comment_Model() {
 		parent::Model();
 		$this->user->set();
-	//	$this->load->library("Notify");
+		$this->load->library("Notify");
 	}
 	
 	var $content = "";
@@ -16,7 +16,7 @@ class Comment_Model extends Model {
 	 	return "test";
 	}
 	
-	function like() {
+	function like($action = "like") {
 		$data['user_id'] = $this->user->data->user_id;
 		$this->notify->from_user($this->user->data->user_id);
 		$data['dream_id'] = $this->dream_id;

@@ -49,11 +49,8 @@ class Theme {
 		}
 		$this->CI->load->view("inc/header", $this->data);
 		
-		/*if ($this->inc_nav) {
-			$this->CI->load->view("inc/nav", $data);
-		}*/
+		if ($this->inc_nav) $this->CI->load->view("inc/nav", $data);
 		
-		$this->CI->load->view("inc/nav", $this->data);
 	}
 	
 	function add_data($new = null) {

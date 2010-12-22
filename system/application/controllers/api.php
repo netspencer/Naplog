@@ -13,7 +13,7 @@ class API extends REST_Controller {
 	}
 	
 	function like_dream_post() {
-		$this->comment->dream_id = $this->post("id");
+		$this->comment->dream_id = $this->post("dream_id");
 		$echo = $this->comment->like();
 		$this->response($echo);
 	}	

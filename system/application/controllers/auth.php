@@ -24,6 +24,7 @@ class Auth extends Controller {
 		}
 		
 		$this->theme->body_class = "landing_page";
+		$this->theme->inc_nav = false;
 		$this->carabiner->css("login.css");
 
 		$this->theme->set_title("Login");

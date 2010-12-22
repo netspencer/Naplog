@@ -21,19 +21,12 @@ $(document).ready(function() {
 	});
 		
 	$("div.dreams .dream a[rel='like']").live("click", function() {
-		like_element = $(this);
-		
 		dream = $(this).parents(".dream");
 		id = dream.attr("id");
 		id = id.substr(6);
-		
-		dream.find("ul.likes").toggle();
-		
-		$.post(base_url+"api/get_likes", {dream_id:id, like:true}, function(data) {
-			if (dream.find("ul.likes").length==0) {
-				dream.find("div.bottom").append(data.html);
-				like_element.text(data.num_likes+" likes");
-			}
+				
+		$.post(base_url+"api/like_dream", {dream_id:id}, function(data) {
+			// do nothing
 		}, "json");
 		
 		return false;
