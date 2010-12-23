@@ -65,6 +65,19 @@ section#dreams ul.likes li img {
   border: 2px #FFF solid;
   margin-right: 5px;
 }
+section#dreams ul.comments li {
+  margin: 10px 0;
+  list-style: none;
+}
+section#dreams ul.comments li div.avatar {
+  float: left;
+  width: 24px;
+  border-width: 2px;
+  margin-right: 10px;
+}
+section#dreams ul.comments li div.content {
+  float: left;
+}
 div.dreams .dream {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
