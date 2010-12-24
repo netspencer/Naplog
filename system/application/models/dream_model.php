@@ -65,6 +65,7 @@ class Dream_Model extends Model {
 	function process_dreams() {
 		foreach($this->results as &$dream) {
 			$dream->smart_timestamp = smart_timestamp($dream->created_at);
+			$dream->iso_timestamp = date("c", $dream->created_at);
 			$dream->full_timestamp = date("l, F j, Y \a\\t g:ia", $dream->created_at);
 			$dream->date_for = date("l", $dream->created_at);
 			$dream->links = $this->find_links(&$dream->content);

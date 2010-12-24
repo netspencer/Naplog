@@ -25,11 +25,8 @@ class API extends REST_Controller {
 	function comment_dream_post() {
 		$this->comment->dream_id = $this->post("id");
 		$this->comment->content = $this->post("content");
-		$this->comment->insert_comment();
-		
-		$return['action'] = "commented";
-		
-		$this->response($return);
+		$comment = $this->comment->insert_comment();
+		$this->response($comment);
 	}
 	
 	function get_likes_post() {

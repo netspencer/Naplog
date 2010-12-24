@@ -4,6 +4,7 @@ var page = 1;
 
 $(document).ready(function() {
 	$(".widget.describe textarea").autogrow();
+	$("span.timestamp").timeago();
 	
 	$(".widget.rate ul li").click(function() {
 		$(".widget.rate input[name='sleep']").val($(this).attr("rel"));
@@ -29,32 +30,41 @@ $(document).ready(function() {
 			dream.find("a[rel='like']").text(data.num_likes+" likes");
 			if (data.action=="liked") {
 				dream.find("a[rel='like']").addClass("liked");
+				$("ul.likes li.user").last().append("<span>,</span>");
+				$("#new-like").tmpl(data).insertBefore($("ul.likes div.end-loop"));
 			} else {
 				dream.find("a[rel='like']").removeClass("liked");
+				$("ul.likes li.current-user").remove();
+				$("ul.likes li.user").last().find("span").remove();
+				if (data.num_likes == 0) {
+					$("ul.likes li.num_likes").remove();
+				}
 			}
 		}, "json");
 		
 		return false;
 	});
-	
-	$("div.dreams .dream a[rel='comment']").live("click", function() {
-		comment_element = $(this);
-		pretext = $(this).text();
-		num_comments = pretext.replace("comments", "");
-		num_comments = jQuery.trim(num_comments);
-		num_comments = parseInt(num_comments);
 		
-		new_num_comments = num_comments + 1;
-		newtext = new_num_comments + " comments";
-		
-		dream = $(this).parents(".dream");
-		id = dream.attr("id");
-		id = id.substr(6);
-		comment = prompt("Leave a comment:");
+	$("form#add-comment").submit(function() {
+		id = $(this).find("[name='dream_id']").val();
+		comment = $(this).find("[name='content']").val();
 		if (comment) $.post(base_url+"api/comment_dream", {id: id, content: comment}, function(data) {
-			if (data.action == "commented") comment_element.text(newtext);
+			$("#new-comment").tmpl(data).insertBefore($("ul.comments div.end-loop"));
+			$("span.timestamp").timeago();
 		}, "json");
 		return false;
+	});
+	
+	var last_keypress = null;
+	$("form#add-comment").keydown(function(e) {
+		if (e.which == 13 && last_keypress == 16) {
+			// shift+enter
+		} else if (e.which == 13) {
+			// enter
+			$(this).submit();
+			return false;
+		}
+		last_keypress = e.which;
 	});
 	
 	$("div.follow_button a").click(function() {

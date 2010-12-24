@@ -58,25 +58,59 @@ section#dreams ul.likes li {
   list-style: none;
   float: left;
 }
-section#dreams ul.likes li img {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.199219) 1px 1px 5px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.199219) 1px 1px 5px;
-  box-shadow: rgba(0, 0, 0, 0.199219) 1px 1px 5px;
-  border: 2px #FFF solid;
+section#dreams ul.likes li.user {
   margin-right: 5px;
+  color: #656565;
+}
+section#dreams ul.likes li.user a {
+  text-decoration: none;
+  color: #1a5396;
+}
+section#dreams ul.likes li.user a:hover {
+  text-decoration: underline;
+}
+section#dreams ul.likes li.num_likes {
+  margin-top: 2px;
+  margin-right: 5px;
+  width: 16px;
+  height: 14px;
+  background: url("../img/icons/heart_16_gray.png");
 }
 section#dreams ul.comments li {
   margin: 10px 0;
   list-style: none;
 }
-section#dreams ul.comments li div.avatar {
+section#dreams ul.comments li div.top {
+  padding: 10px;
+  background: #efefef;
+  margin-bottom: 10px;
+}
+section#dreams ul.comments li div.top div.avatar {
   float: left;
   width: 24px;
   border-width: 2px;
   margin-right: 10px;
 }
+section#dreams ul.comments li div.top div.text {
+  padding: 4px 0;
+  font-size: 18px;
+}
+section#dreams ul.comments li div.top div.text a.user {
+  color: #1a5396;
+  text-decoration: none;
+}
+section#dreams ul.comments li div.top div.text a.user:hover {
+  text-decoration: underline;
+}
+section#dreams ul.comments li div.top div.text span.timestamp {
+  font-family: "Palatino Linotype", Palatino, Georgia, serif;
+  font-size: 14px;
+  font-style: italic;
+  margin-left: 10px;
+  color: #666;
+}
 section#dreams ul.comments li div.content {
-  float: left;
+  font-size: 14px;
 }
 div.dreams .dream {
   -moz-border-radius: 5px;

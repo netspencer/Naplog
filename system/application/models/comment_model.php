@@ -10,6 +10,7 @@ class Comment_Model extends Model {
 	
 	var $content = "";
 	var $dream_id = "";
+	var $order = "asc";
 	
 	function test() {
 	 	return "test";
@@ -57,26 +58,41 @@ class Comment_Model extends Model {
 	
 	function insert_comment() {
 		$data['user_id'] = $this->user->data->user_id;
-		$this->notify->from_user($this->user->data->user_id);
+	//	$this->notify->from_user($this->user->data->user_id);
 		$data['dream_id'] = $this->dream_id;
-		$this->notify->response_to_dream($this->dream_id, true);
+	//	$this->notify->response_to_dream($this->dream_id, true);
 		$data['created_at'] = now();
 		$data['content'] = $this->content;
-		$this->notify->content = $this->content;
-		$this->notify->build_subject("commented");
+	//	$this->notify->content = $this->content;
+	//	$this->notify->build_subject("commented");
 		
 		$this->db->insert("comments", $data);
-		$this->notify->send();
+	//	$this->notify->send();
+		return $this->get_comments(null, $this->db->insert_id());
 	}
 	
-	function get_comments($dream_id) {
+	function get_comments($dream_id = null, $comment_id = null) {
+		if ($dream_id) $this->db->where("dream_id", $dream_id);
+		if ($comment_id) $this->db->where("comment_id", $comment_id);
+		$this->db->order_by("created_at", $this->order);
 		$this->db->join("users", "users.user_id = comments.user_id");
-		$comments = $this->db->get_where("comments", array("dream_id"=>$dream_id));
-		return $comments->result();
+		$query = $this->db->get("comments");
+		$this->comments = $query->result();
+		$this->process_comments();
+		return $this->comments;
+	}
+	
+	function process_comments() {
+		foreach($this->comments as &$comment) {
+			$comment->smart_timestamp = smart_timestamp($comment->created_at);
+			$comment->iso_timestamp = date("c", $comment->created_at);
+			$comment->full_timestamp = date("l, F j, Y \a\\t g:ia", $comment->created_at);
+		}
 	}
 	
 	function get_likes($dream_id, $limit=14) {
 		if ($limit) $this->db->limit($limit);
+		$this->db->order_by("like_id", "asc");
 		$this->db->select("likes.user_id, users.twitter, users.username");
 		$this->db->join("users", "users.user_id = likes.user_id", "left");
 		$likes = $this->db->get_where("likes", array("dream_id"=>$dream_id));

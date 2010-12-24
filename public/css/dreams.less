@@ -63,10 +63,23 @@ section#dreams {
 		li {
 			list-style:none;
 			float:left;
-			img {
-				.box_shadow;
-				border:2px #FFF solid;
+			&.user {
 				margin-right:5px;
+				color:#656565;
+				a {
+					text-decoration:none;
+					color:#1a5396;
+					&:hover {
+						text-decoration:underline;
+					}
+				}
+			}
+			&.num_likes {
+				margin-top:2px;
+				margin-right:5px;
+				width:16px;
+				height:14px;
+				background:url("../img/icons/heart_16_gray.png");
 			}
 		}
 	}
@@ -76,15 +89,37 @@ section#dreams {
 			margin:10px 0;
 			list-style:none;
 			
-			div.avatar {
-				float:left;
-				width:24px;
-				border-width:2px;
-				margin-right:10px;
+			div.top {
+				padding:10px;
+				background:#efefef;
+				margin-bottom:10px;
+				div.avatar {
+					float:left;
+					width:24px;
+					border-width:2px;
+					margin-right:10px;
+				}
+				div.text {
+					padding:4px 0;
+					font-size:18px;
+					a.user {
+						color:#1a5396;
+						text-decoration:none;
+						&:hover {
+							text-decoration:underline;
+						}
+					}
+					span.timestamp {
+						font-family:"Palatino Linotype", Palatino, Georgia, serif;
+						font-size:14px;
+						font-style:italic;
+						margin-left:10px;
+						color:#666;
+					}
+				}
 			}
-			
 			div.content {
-				float:left;
+				font-size:14px;
 			}
 		}
 	}
@@ -176,6 +211,9 @@ div.dreams {
 					&.liked {
 						color:#FFF;
 						background:#5ba4ec;
+					}
+					&[rel='like'] {
+					//	background-image:url("../img/icons/heart_16.png");
 					}
 				}
 				&:last-child:after {
