@@ -63,6 +63,7 @@ class API extends REST_Controller {
 		$data['dreams'] = $this->dream->get_dreams();
 		
 		$response['html'] = $this->load->view("inc/list_dreams", $data, true);
+		//$response = $data['dreams'];
 		$this->response($response);
 	}
 	

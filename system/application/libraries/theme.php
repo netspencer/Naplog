@@ -31,6 +31,7 @@ class Theme {
 		$this->CI->carabiner->js("https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js");
 		$this->CI->carabiner->js("jquery.autogrow-textarea.js");
 		$this->CI->carabiner->js("jquery.tmpl.js");
+		$this->CI->carabiner->js("jquery.scrollto.js");
 		$this->CI->carabiner->js("jquery.timeago.js");
 		$this->CI->carabiner->js("main.js");
 	}
@@ -43,11 +44,7 @@ class Theme {
 		$this->data['current'] = $this->current_page;
 		$this->data['body_class'] = $this->body_class;
 		
-		if ($this->CI->user->data->username) {
-			$this->data['username'] = $this->CI->user->data->username;
-		} else {
-			$this->data['username'] = null;
-		}
+		$this->data['user_data'] = $this->CI->user->data;
 		$this->CI->load->view("inc/header", $this->data);
 		
 		if ($this->inc_nav) $this->CI->load->view("inc/nav", $this->data);

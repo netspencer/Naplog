@@ -9,8 +9,8 @@
 				<li class="left <?php if($current=="dreams") echo "current"; ?>"><a href="<?=base_url()?>dreams">Dreams</a></li>
 				<li class="left <?php if($current=="people") echo "current"; ?>"><a href="<?=base_url()?>people">People</a></li>
 				<li class="left <?php if($current=="explore") echo "current"; ?>"><a href="<?=base_url()?>explore">Explore</a></li>
-				<?php if($username):?>
-				<li class="right user first <?php if($current=="account") echo "current"; ?>"><a href="<?=base_url()?>user/<?=$username?>"><?=$username?></a>
+				<?php if($user_data):?>
+				<li class="right user first <?php if($current=="account") echo "current"; ?>"><a href="<?=base_url()?>user/<?=$user_data->username?>"><?=$user_data->username?></a>
 					<ul class="sub">
 						<li><a href="<?=base_url()?>settings">Settings</a></li>
 						<li><a href="<?=base_url()?>auth/logout">Logout</a></li>

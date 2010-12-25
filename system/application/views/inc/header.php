@@ -7,6 +7,7 @@
 
 	<title><?=$page_title?></title>
 	<?php $this->carabiner->display("css")?>
+	<?php $this->jquery_tmpl->display()?>
 		
 </head>
 

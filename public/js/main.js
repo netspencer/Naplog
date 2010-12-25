@@ -16,6 +16,7 @@ $(document).ready(function() {
 		next_page = page + 1;
 		$.get(base_url+"api/load_more_dreams", {page:next_page}, function(data) {
 			$("div.dreams .dream").last().after(data.html);
+			//$("#tmpl_dream").tmpl(data).insertAfter($("div.dreams .dream").last());
 			page++;
 		}, "json");
 		return false;
@@ -31,7 +32,7 @@ $(document).ready(function() {
 			if (data.action=="liked") {
 				dream.find("a[rel='like']").addClass("liked");
 				$("ul.likes li.user").last().append("<span>,</span>");
-				$("#new-like").tmpl(data).insertBefore($("ul.likes div.end-loop"));
+				$("#tmpl_like").tmpl(data).insertBefore($("ul.likes div.end-loop"));
 			} else {
 				dream.find("a[rel='like']").removeClass("liked");
 				$("ul.likes li.current-user").remove();
@@ -44,13 +45,32 @@ $(document).ready(function() {
 		
 		return false;
 	});
+	
+	$("div.dreams .dream a[rel='comment']").live("click", function() {
+		$.scrollTo("#add-comment", 500);
+		$("#add-comment textarea").trigger("focus");
+		return false;
+	});
+	
+	$("#add-comment").click(function() {
+		$("#add-comment textarea").trigger("focus");
+	});
+	
+	$("#add-comment textarea").focus(function() {
+		$("#add-comment h2").addClass("focus");
+	});
+	
+	$("#add-comment textarea").blur(function() {
+		$("#add-comment h2").removeClass("focus");
+	});
 		
 	$("form#add-comment").submit(function() {
 		id = $(this).find("[name='dream_id']").val();
 		comment = $(this).find("[name='content']").val();
 		if (comment) $.post(base_url+"api/comment_dream", {id: id, content: comment}, function(data) {
-			$("#new-comment").tmpl(data).insertBefore($("ul.comments div.end-loop"));
+			$("#tmpl_comment").tmpl(data).insertBefore($("ul.comments div.end-loop"));
 			$("span.timestamp").timeago();
+			$("form#add-comment").find("[name='content']").val("");
 		}, "json");
 		return false;
 	});

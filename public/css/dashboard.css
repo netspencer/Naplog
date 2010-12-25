@@ -39,6 +39,7 @@ section#new_dream .widget textarea {
   overflow: hidden;
   border: 0;
   outline: 0;
+  resize: none;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;

@@ -39,7 +39,7 @@
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('database', 'theme', 'carabiner', 'user', 'session', 'encrypt');
+$autoload['libraries'] = array('database', 'theme', 'carabiner', 'user', 'session', 'encrypt', 'parser', 'jquery_tmpl');
 
 
 /*

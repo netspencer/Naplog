@@ -63,7 +63,7 @@ class CI_Parser {
 				$template = $this->_parse_single($key, (string)$val, $template);
 			}
 		}
-		
+				
 		if ($return == FALSE)
 		{
 			$CI->output->append_output($template);

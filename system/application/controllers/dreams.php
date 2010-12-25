@@ -39,6 +39,10 @@ class Dreams extends Controller {
 	}
 	
 	function view($id) {
+		$this->jquery_tmpl->add("comment");
+		$this->jquery_tmpl->add("like");
+		
+		$data['username'] = "pizza";
 		$data['dreams'] = $this->Dream_Model->get_dreams($id);
 		$data['likes'] = $this->Comment_Model->get_likes($id, false);
 		$data['comments'] = $this->Comment_Model->get_comments($id);
@@ -48,7 +52,6 @@ class Dreams extends Controller {
 		
 		$this->theme->set_title("Dream ".$id);
 		$this->theme->load_page("dream", $data);
-		
 	}
 	
 }

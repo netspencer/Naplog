@@ -73,6 +73,7 @@ header ul.nav li:hover ul.sub {
   display: block;
 }
 header ul.sub {
+  z-index: 10000;
   width: 180px;
   display: none;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;

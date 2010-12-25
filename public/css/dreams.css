@@ -201,6 +201,30 @@ div.dreams .dream ul.buttons li:last-child:after {
   display: block;
   clear: both;
 }
+form#add-comment {
+  margin-top: 20px;
+}
+form#add-comment h2 {
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: -2px;
+  color: #CCC;
+}
+form#add-comment h2.focus {
+  color: #2a87fb;
+}
+form#add-comment textarea {
+  padding: 10px;
+  resize: none;
+  max-width: 610px;
+  width: 598px;
+  height: 40px;
+  outline: 0;
+  border: 1px #CCC solid;
+}
+form#add-comment textarea:focus {
+  border: 1px #2a87fb solid;
+}
 #load_more {
   background: #d3d5d5;
   -moz-border-radius: 5px;
