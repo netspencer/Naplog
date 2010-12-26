@@ -17,24 +17,48 @@ class Users extends Controller {
 		redirect("user/$username");
 	}
 	
-	function view($user) {
+	function view($user, $subpage = null) {
 		$user = $this->Users_Model->get_user($user);
 		
 		if (!$user) redirect("/");
-		
-		$this->dream->from_user = $user->username;
-		
-		$data['dreams'] = $this->dream->get_dreams();
-		$data['user_id'] = $user->user_id;
-		$data['does_follow'] = $this->follow->does_follow($user->user_id);
-		$data['is_self'] = $user->is_self;
-							
-		$this->carabiner->css("dreams.css");
-		$this->carabiner->css("user.css");
-		
-		$this->theme->set_title($user->fullname);
-		if ($user == $this->user->data->username) $this->theme->set_current("account");
-		$this->theme->load_page("user", $data);
+				
+		if ($subpage == "followers") {
+			$data['people'] = $this->follow->get("followers", $user->user_id);
+			
+			$this->carabiner->css("people.css");
+			
+			$this->theme->set_title($user->fullname." / Followers");
+			$this->theme->load_page("people", $data);
+			
+			
+		} else if ($subpage == "following") {
+			$data['people'] = $this->follow->get("following", $user->user_id);
+			
+			$this->carabiner->css("people.css");
+			
+			$this->theme->set_title($user->fullname." / Following");
+			$this->theme->load_page("people", $data);
+			
+			
+		} else {
+			$this->dream->from_user = $user->username;
+
+			$data['dreams'] = $this->dream->get_dreams();
+			$data['user_id'] = $user->user_id;
+			$data['does_follow'] = $this->follow->does_follow($user->user_id);
+			$data['user'] = $user;
+			$data['is_self'] = $user->is_self;
+			$data['followers_num'] = $this->follow->get_num("followers", $user->user_id);
+			$data['following_num'] = $this->follow->get_num("following", $user->user_id);
+
+			$this->carabiner->css("dreams.css");
+			$this->carabiner->css("user.css");
+			
+			$this->theme->set_title($user->fullname);
+			if ($user == $this->user->data->username) $this->theme->set_current("account");
+			$this->theme->load_page("user", $data);
+			
+		}
 	}
 	
 	function settings() {

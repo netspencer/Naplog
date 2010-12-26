@@ -64,26 +64,18 @@ class Dream_Model extends Model {
 	
 	function process_dreams() {
 		foreach($this->results as &$dream) {
+			$dream->content = find_links($dream->content);
+			$dream->content = find_at_user($dream->content);
 			$dream->smart_timestamp = smart_timestamp($dream->created_at);
 			$dream->iso_timestamp = date("c", $dream->created_at);
 			$dream->full_timestamp = date("l, F j, Y \a\\t g:ia", $dream->created_at);
 			$dream->date_for = date("l", $dream->created_at);
-			$dream->links = $this->find_links(&$dream->content);
-			
+
 			$dream->user_liked = $this->Comment_Model->user_liked($this->user->data->user_id, $dream->dream_id);
 			//$dream->likes = $this->Comment_Model->get_likes($dream->dream_id);
 		}
 	}
 	
-	function find_links($text) {
-		$url_search = "@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)@";
-		$url_replace = "<a href=\"$1\">$1</a>";
-		$text = preg_replace($url_search,$url_replace,$text);
-		
-		preg_match($url_search,$text,$links);
-		
-		return $links;
-	}
 	
 }
 

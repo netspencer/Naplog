@@ -26,6 +26,7 @@ class API extends REST_Controller {
 		$this->comment->dream_id = $this->post("id");
 		$this->comment->content = $this->post("content");
 		$comment = $this->comment->insert_comment();
+		$comment = $this->load->view("partial/comment", $comment[0], true);
 		$this->response($comment);
 	}
 	

@@ -22,6 +22,47 @@ class Follow_Model extends Model {
 		}
 	}
 	
+	function get_num($type, $user_id = null) {
+		if (empty($user_id)) $user_id = $this->user->data->user_id;
+		
+		switch($type) {
+			case "following":
+				$this->db->where("follows.follow_id !=", $user_id);
+				$this->db->where("follows.user_id", $user_id);
+				break;
+			case "followers":
+				$this->db->where("follows.user_id !=", $user_id);
+				$this->db->where("follows.follow_id", $user_id);
+				break;
+		}
+		
+		$num = $this->db->count_all_results("follows");
+		
+		return $num;
+	}
+	
+	function get($type, $user_id = null) {
+		if (empty($user_id)) $user_id = $this->user->data->user_id;
+		
+		switch($type) {
+			case "following":
+				$this->db->where("follows.follow_id !=", $user_id);
+				$this->db->where("follows.user_id", $user_id);
+				$this->db->join("users", "users.user_id = follows.follow_id");
+				break;
+			case "followers":
+				$this->db->where("follows.user_id !=", $user_id);
+				$this->db->where("follows.follow_id", $user_id);
+				$this->db->join("users", "users.user_id = follows.user_id");
+				break;
+		}
+						
+		$query = $this->db->get("follows");
+		$query = $query->result();
+		
+		return $query;
+	}
+	
 	function follow($follow_id, $user_id = null) {
 		if (empty($user_id)) $user_id = $this->user->data->user_id;
 		$data['user_id'] = $user_id;

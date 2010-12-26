@@ -68,23 +68,30 @@ $(document).ready(function() {
 		id = $(this).find("[name='dream_id']").val();
 		comment = $(this).find("[name='content']").val();
 		if (comment) $.post(base_url+"api/comment_dream", {id: id, content: comment}, function(data) {
-			$("#tmpl_comment").tmpl(data).insertBefore($("ul.comments div.end-loop"));
+			//$("#tmpl_comment").tmpl(data).insertBefore($("ul.comments div.end-loop"));
+			$("ul.comments div.end-loop").before(data);
 			$("span.timestamp").timeago();
-			$("form#add-comment").find("[name='content']").val("");
-		}, "json");
+			set_comment("");
+		});
 		return false;
 	});
 	
-	var last_keypress = null;
 	$("form#add-comment").keydown(function(e) {
-		if (e.which == 13 && last_keypress == 16) {
+		if (e.which == 13 && e.shiftKey) {
 			// shift+enter
 		} else if (e.which == 13) {
 			// enter
 			$(this).submit();
 			return false;
 		}
-		last_keypress = e.which;
+	});
+	
+	$("ul.comments span.reply").live("click", function() {
+		comment = $(this).parents("li");
+		user = comment.find("a.user").text();
+		$("#add-comment textarea").trigger("focus");
+		temp = $("form#add-comment").find("[name='content']").val();
+		set_comment("@"+user+" "+temp);
 	});
 	
 	$("div.follow_button a").click(function() {
@@ -108,3 +115,7 @@ $(document).ready(function() {
 		$("#new_password").fadeIn();
 	});
 });
+
+function set_comment(value) {
+	$("form#add-comment").find("[name='content']").val(value);
+}

@@ -1,6 +1,6 @@
 <ul class="comments">
 	<?php foreach($comments as $comment):?>
-		<?=$this->parser->parse("tmpl/comment", $comment, true);?>
+		<?php $this->load->view("partial/comment", $comment);?>
 	<?php endforeach;?>
 	<div class="end-loop"></div>
 </ul>

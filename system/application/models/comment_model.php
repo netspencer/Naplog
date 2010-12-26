@@ -84,6 +84,8 @@ class Comment_Model extends Model {
 	
 	function process_comments() {
 		foreach($this->comments as &$comment) {
+			$comment->content = find_links($comment->content);
+			$comment->content = find_at_user($comment->content);
 			$comment->smart_timestamp = smart_timestamp($comment->created_at);
 			$comment->iso_timestamp = date("c", $comment->created_at);
 			$comment->full_timestamp = date("l, F j, Y \a\\t g:ia", $comment->created_at);

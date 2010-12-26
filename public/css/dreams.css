@@ -109,6 +109,15 @@ section#dreams ul.comments li div.top div.text span.timestamp {
   margin-left: 10px;
   color: #666;
 }
+section#dreams ul.comments li div.top div.text span.reply {
+  float: right;
+  cursor: pointer;
+  color: #666;
+  opacity: 0.4;
+}
+section#dreams ul.comments li div.top div.text span.reply:hover {
+  opacity: 1;
+}
 section#dreams ul.comments li div.content {
   font-size: 14px;
 }

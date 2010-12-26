@@ -18,7 +18,7 @@ class Theme {
 	}
 	
 	function set_title($title) {
-		$this->page_title .= " | ".$title;
+		$this->page_title .= " / ".$title;
 	}
 	
 	function load_base_css() {

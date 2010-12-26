@@ -1,5 +1,6 @@
 <section id="user">
 	<div class="container_12">
+		<div class="clear"></div>
 		<div class="grid_8">
 			<?php $this->load->view("inc/list_dreams", array("dreams"=>$dreams));?>
 			<a href="#" id="load_more">Load More Dream</a>
@@ -14,6 +15,8 @@
 				<?php endif;?>
 			</div>
 			<?php endif;?>
+			<p><a href="<?=base_url()?>user/<?=$user->username?>/followers">Followers</a>: <?=$followers_num?></p>
+			<p><a href="<?=base_url()?>user/<?=$user->username?>/following">Following</a>: <?=$following_num?></p>
 		</div>
 		<div class="clear"></div>
 	</div>

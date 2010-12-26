@@ -1,5 +1,5 @@
 <div class="dreams">
 <?php foreach($dreams as $dream):?>
-	<?=$this->parser->parse("tmpl/dream", $dream, true);?>
+	<?php $this->load->view("partial/dream", $dream);?>
 <?php endforeach;?>
 </div>

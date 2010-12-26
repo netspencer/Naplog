@@ -19,7 +19,6 @@
 }
 section#user {
   margin-top: 20px;
-  color: red;
 }
 section#user .follow_button a {
   cursor: pointer;

@@ -44,6 +44,9 @@ $route['default_controller'] = "dashboard";
 $route['scaffolding_trigger'] = "";
 
 $route['user/(:any)'] = "users/view/$1";
+$route['user/(:any)/following'] = "users/view/$1/following";
+$route['user/(:any)/followers'] = "users/view/$1/followers";
+
 $route['dream/(:num)'] = "dreams/view/$1";
 
 $route['settings'] = "users/settings";
