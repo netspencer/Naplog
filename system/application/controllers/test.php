@@ -6,6 +6,7 @@ class Test extends Controller {
 		parent::Controller();
 		$this->user->set();
 		$this->load->model("follow_model", "follow");
+		$this->load->model("notification_model", "notification");
 	}
 	
 	function index() {
@@ -28,6 +29,25 @@ class Test extends Controller {
 	  } else {
 	    echo "Sadly, $person isn't so cool.";
 	  }
+	}
+	
+	function create_notification() {
+		$this->notification->user_id = 1;
+		$this->notification->type = "commented";
+		$this->notification->data = array("comment_id"=>57, "your_dream"=>true);
+		$this->notification->_create();
+	}
+	
+	function notification($id) {
+		$notification = $this->notification->_get_notification($id);
+		
+		echo $notification->text;
+		echo "<hr>";
+		echo $notification->link;
+	}
+	
+	function notify_comment($id) {
+		$this->notification->notify_comment($id);
 	}
 	
 }

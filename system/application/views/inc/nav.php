@@ -12,6 +12,7 @@
 				<?php if($user_data):?>
 				<li class="right user first <?php if($current=="account") echo "current"; ?>"><a href="<?=base_url()?>user/<?=$user_data->username?>"><?=$user_data->username?></a>
 					<ul class="sub">
+						<li><a href="<?=base_url()?>notifications">Notifications</a></li>
 						<li><a href="<?=base_url()?>settings">Settings</a></li>
 						<li><a href="<?=base_url()?>auth/logout">Logout</a></li>
 					</ul>

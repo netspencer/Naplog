@@ -61,6 +61,14 @@ class Users extends Controller {
 		}
 	}
 	
+	function notifications() {
+		$data['notifications'] = $this->Notification_Model->get();
+		
+		$this->theme->set_title("Notifications");
+		$this->theme->set_current("account");
+		$this->theme->load_page("notifications", $data);
+	}
+	
 	function settings() {
 		$this->load->library("form_validation");
 		$this->load->helper("form");

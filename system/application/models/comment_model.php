@@ -67,8 +67,12 @@ class Comment_Model extends Model {
 	//	$this->notify->build_subject("commented");
 		
 		$this->db->insert("comments", $data);
-	//	$this->notify->send();
-		return $this->get_comments(null, $this->db->insert_id());
+		$comment_id = $this->db->insert_id();
+		$result = $this->get_comments(null, $comment_id);
+		
+		$this->Notification_Model->notify_comment($comment_id);
+		
+		return $result;
 	}
 	
 	function get_comments($dream_id = null, $comment_id = null) {

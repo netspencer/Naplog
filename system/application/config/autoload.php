@@ -108,7 +108,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array("Users_Model", "Follow_Model", "Dream_Model", "Comment_Model");
+$autoload['model'] = array("Users_Model", "Follow_Model", "Dream_Model", "Comment_Model", "Notification_Model");
 
 
 

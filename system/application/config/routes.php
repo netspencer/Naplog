@@ -50,7 +50,7 @@ $route['user/(:any)/followers'] = "users/view/$1/followers";
 $route['dream/(:num)'] = "dreams/view/$1";
 
 $route['settings'] = "users/settings";
-
+$route['notifications'] = "users/notifications";
 
 /* End of file routes.php */
 /* Location: ./system/application/config/routes.php */

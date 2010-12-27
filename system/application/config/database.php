@@ -34,7 +34,7 @@
 | the active record class
 */
 
-$active_group = "default";
+$active_group = "mamp";
 $active_record = TRUE;
 
 $db['default']['hostname'] = "external-db.s72725.gridserver.com";
@@ -49,6 +49,19 @@ $db['default']['cache_on'] = FALSE;
 $db['default']['cachedir'] = "system/cache/db";
 $db['default']['char_set'] = "utf8";
 $db['default']['dbcollat'] = "utf8_general_ci";
+
+$db['mamp']['hostname'] = "localhost";
+$db['mamp']['username'] = "root";
+$db['mamp']['password'] = "root";
+$db['mamp']['database'] = "naplog";
+$db['mamp']['dbdriver'] = "mysql";
+$db['mamp']['dbprefix'] = "";
+$db['mamp']['pconnect'] = TRUE;
+$db['mamp']['db_debug'] = TRUE;
+$db['mamp']['cache_on'] = FALSE;
+$db['mamp']['cachedir'] = "system/cache/db";
+$db['mamp']['char_set'] = "utf8";
+$db['mamp']['dbcollat'] = "utf8_general_ci";
 
 
 /* End of file database.php */
