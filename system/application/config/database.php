@@ -34,7 +34,11 @@
 | the active record class
 */
 
-$active_group = "mamp";
+if (base_url() == "http://naplog.com/") {
+	$active_group = "default";
+} else {
+	$active_group = "mamp";
+}
 $active_record = TRUE;
 
 $db['default']['hostname'] = "external-db.s72725.gridserver.com";
