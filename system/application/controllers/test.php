@@ -50,6 +50,16 @@ class Test extends Controller {
 		$this->notification->notify_comment($id);
 	}
 	
+	function preg() {
+		$users = list_at_user("hello @spencer and @kfir");
+		
+		foreach($users as $user) {
+			$user = $this->Users_Model->get_user($user);
+			print_r($user);
+			echo "<hr>";
+		}
+	}
+	
 }
 
 ?>

@@ -69,6 +69,19 @@ class Users extends Controller {
 		$this->theme->load_page("notifications", $data);
 	}
 	
+	function load_notification($id) {
+		$notification = $this->Notification_Model->_get_notification($id);
+		
+		$user_id = $notification->obj->user_id;
+		
+		if ($user_id == $this->user->data->user_id) {
+			$this->Notification_Model->mark($id);
+			redirect($notification->direct_link);
+		} else {
+			redirect("notifications");
+		}
+	}
+	
 	function settings() {
 		$this->load->library("form_validation");
 		$this->load->helper("form");

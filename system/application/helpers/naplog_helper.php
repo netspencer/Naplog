@@ -17,6 +17,13 @@ function find_at_user($text) {
 	return preg_replace($url_search,$url_replace,$text);
 }
 
+function list_at_user($text) {
+	$pattern = "%(?<!\S)@([A-Za-z0-9_]+)%";
+	preg_match_all($pattern,$text,$matches);
+	
+	return $matches[1];
+}
+
 function find_links($text) {
 	$url_search = "@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)@";
 	$url_replace = "<a href=\"$1\">$1</a>";

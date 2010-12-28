@@ -16,6 +16,7 @@ class Notification_Model extends Model {
 		if (!$user_id) $user_id = $this->user->data->user_id;
 		
 		$this->db->where("user_id", $user_id);
+		$this->db->order_by("timestamp", "desc");
 		$query = $this->db->get("notifications");
 		$notifications = $query->result();
 		
@@ -27,33 +28,74 @@ class Notification_Model extends Model {
 		return $results;
 	}
 	
-	function notify_comment($comment_id) {
+	function mark($notification_id, $as = "read") {
+		switch($as) {
+			case "read":
+				$data['read'] = 1;
+				break;
+			case "unread":
+				$data['read'] = 0;
+				break;
+		}
+		
+		$this->db->where("notification_id", $notification_id);
+		$this->db->update("notifications", $data);
+	}
+	
+	function notify_comment($comment_id, $options = null) {
 		$this->type = "commented";
 		$this->data['comment_id'] = $comment_id;
 		
-		$this->db->select("comments.dream_id, comments.user_id, dreams.user_id AS user_id2");
-		$this->db->where("comment_id", $comment_id);
-		$this->db->join("dreams", "dreams.dream_id = comments.dream_id");
-		$query = $this->db->get("comments");
-		$comment = $query->row();
+		$dreamer = isset($options['dreamer']) ? $options['dreamer'] : true;
+		$sibling_comments = isset($options['sibling_comments']) ? $options['sibling_comments'] : false;
+		$at_mention = isset($options['at_mention']) ? $options['at_mention'] : true;
 		
-		$this->db->select("comments.user_id");
-		$this->db->distinct();
-		$this->db->where("dream_id", $comment->dream_id);
-		$this->db->where("user_id !=", $comment->user_id);
-		$query = $this->db->get("comments");
-		$comments = $query->result();
+		$user_ids = null;
 		
-		foreach($comments as $item) {
-			$user_ids[] = $item->user_id;
+		if ($dreamer) {
+			$this->db->select("comments.dream_id, comments.user_id, comments.content, dreams.user_id AS user_id2");
+			$this->db->where("comment_id", $comment_id);
+			$this->db->join("dreams", "dreams.dream_id = comments.dream_id");
+			$this->db->where("comments.user_id != dreams.user_id");
+			$this->db->where_not_in("comments.user_id", $user_ids);
+			$query = $this->db->get("comments");
+			$comment = $query->row();
+
+			$this->user_id = $comment->user_id2;
+			$this->_create();
+			$user_ids[] = $this->user_id;
 		}
 		
-		if ($comment->user_id2 != $comment->user_id) $user_ids[] = $comment->user_id2;
-	
-		$users_ids = array_unique($user_ids);
-		foreach ($user_ids as $user_id) {
-			$this->user_id = $user_id;
-			$this->_create();
+		if ($at_mention) {
+			$users = list_at_user($comment->content);
+			
+			$this->data['at_mention'] = true;
+			foreach($users as $user) {
+				$user = $this->Users_Model->get_user($user);
+				if ($user && $user->user_id != $comment->user_id) {
+					$this->user_id = $user->user_id;
+					$this->_create();
+					$user_ids[] = $this->user_id;
+				}
+			}
+			$this->data['content'] = null;
+		}
+		
+		if ($sibling_comments) {
+			$this->db->select("comments.user_id");
+			$this->db->distinct();
+			$this->db->where("dream_id", $comment->dream_id);
+			$this->db->where("user_id !=", $comment->user_id);
+			$this->db->where("user_id !=", $comment->user_id2);
+			$this->db->where_not_in("comments.user_id", $user_ids);
+			$query = $this->db->get("comments");
+			$comments = $query->result();
+
+			foreach($comments as $item) {
+				$this->user_id = $item->user_id;
+				$this->_create();
+				$user_ids[] = $this->user_id;
+			}
 		}
 	}
 		
@@ -64,6 +106,7 @@ class Notification_Model extends Model {
 		$data['timestamp'] = now();
 		
 		$this->db->insert("notifications", $data);
+		return $this->db->insert_id();
 	}
 	
 	function _get_notification($id) {
@@ -78,15 +121,18 @@ class Notification_Model extends Model {
 		
 		switch($this->notification->type) {
 			case "commented":
-				return $this->_build_notification__commented();
+				$notification = $this->_build_notification__commented();
 				break;
 			case "followed":
-				return $this->_build_notification__followed();
+				$notification = $this->_build_notification__followed();
 				break;
 			default:
-				return print_r($this->notification, true);
+				$notification = $this->notification;
 				break;
 		}
+		$notification->link = "notification/load/".$this->notification->notification_id;
+		$notification->obj = $this->notification;
+		return $notification;
 	}
 		
 	private function _build_notification__commented() {
@@ -109,7 +155,7 @@ class Notification_Model extends Model {
 		} else {
 			$notification->text = "$comment->fullname also commented on $comment->fullname2's dream";
 		}
-		$notification->link = base_url()."dream/$comment->dream_id#comment_$comment->comment_id";
+		$notification->direct_link = "dream/$comment->dream_id#comment_$comment->comment_id";
 				
 		return $notification;
 	}

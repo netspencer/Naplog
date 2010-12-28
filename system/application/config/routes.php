@@ -51,6 +51,7 @@ $route['dream/(:num)'] = "dreams/view/$1";
 
 $route['settings'] = "users/settings";
 $route['notifications'] = "users/notifications";
+$route['notification/load/(:num)'] = "users/load_notification/$1";
 
 /* End of file routes.php */
 /* Location: ./system/application/config/routes.php */
