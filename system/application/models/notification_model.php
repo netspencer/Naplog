@@ -9,6 +9,7 @@ class Notification_Model extends Model {
 	var $user_id = null;
 	var $subscription_id = null;
 	var $type = null;
+	var $item_id = null;
 	var $data = null;
 	var $notification = null;
 	
@@ -44,7 +45,7 @@ class Notification_Model extends Model {
 	
 	function notify_comment($comment_id, $options = null) {
 		$this->type = "commented";
-		$this->data['comment_id'] = $comment_id;
+		$this->item_id = $comment_id;
 		
 		$dreamer = isset($options['dreamer']) ? $options['dreamer'] : true;
 		$sibling_comments = isset($options['sibling_comments']) ? $options['sibling_comments'] : false;
@@ -102,7 +103,8 @@ class Notification_Model extends Model {
 	function _create() {
 		$data['user_id'] = $this->user_id;
 		$data['type'] = $this->type;
-		$data['data'] = json_encode($this->data);
+		$data['item_id'] = $this->item_id;
+		if ($this->data) $data['data'] = json_encode($this->data);
 		$data['timestamp'] = now();
 		
 		$this->db->insert("notifications", $data);
@@ -136,7 +138,7 @@ class Notification_Model extends Model {
 	}
 		
 	private function _build_notification__commented() {
-		$comment_id = $this->notification->data->comment_id;
+		$comment_id = $this->notification->item_id;
 		
 		$this->db->select("comments.*, u1.fullname, u1.username, u1.twitter, dreams.user_id, u2.fullname AS fullname2, u2.username AS username2, u2.user_id as user_id2");
 		$this->db->where("comment_id", $comment_id);
