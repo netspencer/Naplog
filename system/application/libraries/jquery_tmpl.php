@@ -34,17 +34,20 @@ class jquery_tmpl {
 	}
 	
 	private function _build_tmpl_loop() {
-		$return = null;
-		if ($this->templates) $return = "<!-- jquery tmpl -->\n";
-		foreach($this->templates as $tmpl) {
-			$return .= "<script id=\"tmpl_$tmpl\" type=\"text/x-jquery-tmpl\">";
-			$return .= "\n";
-			$return .= $this->_get($tmpl);
-			$return .= "\n";
-			$return .= "</script>";
-			$return .= "\n";
+		if ($this->templates) {
+			$return = "<!-- jquery tmpl -->\n";
+			foreach($this->templates as $tmpl) {
+				$return .= "<script id=\"tmpl_$tmpl\" type=\"text/x-jquery-tmpl\">";
+				$return .= "\n";
+				$return .= $this->_get($tmpl);
+				$return .= "\n";
+				$return .= "</script>";
+				$return .= "\n";
+			}
+			$return .= "<!-- end jquery tmpl -->";
+		} else {
+			$return = null;
 		}
-		if ($this->templates) $return .= "<!-- end jquery tmpl -->";
 		
 		$this->tmpl_string = $return;
 	}

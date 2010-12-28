@@ -68,7 +68,10 @@ class Follow_Model extends Model {
 		$data['user_id'] = $user_id;
 		$data['follow_id'] = $follow_id;
 		
-		if (!$this->does_follow($follow_id, $user_id)) $this->db->insert("follows", $data);
+		if (!$this->does_follow($follow_id, $user_id)) {
+			$this->db->insert("follows", $data);
+			$this->Notification_Model->notify_follow($follow_id, $user_id);
+		}
 	}
 	
 	function unfollow($follow_id, $user_id = null) {

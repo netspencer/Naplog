@@ -7,7 +7,6 @@ class Notification_Model extends Model {
 	}
 	
 	var $user_id = null;
-	var $subscription_id = null;
 	var $type = null;
 	var $item_id = null;
 	var $data = null;
@@ -41,6 +40,14 @@ class Notification_Model extends Model {
 		
 		$this->db->where("notification_id", $notification_id);
 		$this->db->update("notifications", $data);
+	}
+	
+	function notify_follow($user_id, $followed_id) {
+		$this->type = "followed";
+		$this->user_id = $user_id;
+		$this->item_id = $followed_id;
+		
+		$this->_create();
 	}
 	
 	function notify_comment($comment_id, $options = null) {
@@ -164,15 +171,17 @@ class Notification_Model extends Model {
 	}
 	
 	private function _build_notification__followed() {
-		$user_id = $this->notification->data->user_id;
+		$user_id = $this->notification->item_id;
 		
-		$this->db->select("users.fullname, users.username");
+		$this->db->select("users.fullname, users.username, users.twitter");
 		$this->db->where("user_id", $user_id);
 		$query = $this->db->get("users");
 		$user = $query->row();
 		
 		$notification->text = "$user->fullname is now following you";
-		$notification->link = base_url()."user/$user->username";
+		$notification->user->twitter = $user->twitter;
+		
+		$notification->direct_link = "user/$user->username";
 		
 		return $notification;
 	}

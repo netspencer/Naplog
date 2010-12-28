@@ -1,6 +1,6 @@
 <?php
 
-class Notifo_API {
+class Notifo_api {
   
   const API_ROOT = 'https://api.notifo.com/';
   const API_VER = 'v1';
