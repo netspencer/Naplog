@@ -1,0 +1,41 @@
+@import "function";
+
+section#notifications {
+	margin-top:20px;
+	
+	ul {
+		.box_shadow();
+		li {
+			list-style:none;
+			border-bottom:1px #CCC solid;
+			&.unread {
+				background:#f5ffad;
+				&:hover {
+					background:#f4ff71;
+				}
+			}
+			&.read {
+				background:#FFF;
+				&:hover {
+					background:#EEE;
+				}
+			}
+			a {
+				padding:10px;
+				width:100%;
+				height:100%;
+				display:block;
+				text-decoration:none;
+				color:inherit;
+			}
+			div.avatar {
+				width:30px;
+				margin-right:10px;
+				float:left;
+			}
+			p.text {
+				float:left;
+			}
+		}
+	}
+}

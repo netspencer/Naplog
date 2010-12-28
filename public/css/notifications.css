@@ -1,0 +1,40 @@
+section#notifications {
+  margin-top: 20px;
+}
+section#notifications ul {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.199219) 1px 1px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.199219) 1px 1px 5px;
+  box-shadow: rgba(0, 0, 0, 0.199219) 1px 1px 5px;
+}
+section#notifications ul li {
+  list-style: none;
+  border-bottom: 1px #CCC solid;
+}
+section#notifications ul li.unread {
+  background: #f5ffad;
+}
+section#notifications ul li.unread:hover {
+  background: #f4ff71;
+}
+section#notifications ul li.read {
+  background: #FFF;
+}
+section#notifications ul li.read:hover {
+  background: #EEE;
+}
+section#notifications ul li a {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+section#notifications ul li div.avatar {
+  width: 30px;
+  margin-right: 10px;
+  float: left;
+}
+section#notifications ul li p.text {
+  float: left;
+}

@@ -64,6 +64,8 @@ class Users extends Controller {
 	function notifications() {
 		$data['notifications'] = $this->Notification_Model->get();
 		
+		$this->carabiner->css("notifications.css");
+		
 		$this->theme->set_title("Notifications");
 		$this->theme->set_current("account");
 		$this->theme->load_page("notifications", $data);

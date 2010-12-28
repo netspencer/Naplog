@@ -138,7 +138,7 @@ class Notification_Model extends Model {
 	private function _build_notification__commented() {
 		$comment_id = $this->notification->data->comment_id;
 		
-		$this->db->select("comments.*, u1.fullname, u1.username, dreams.user_id, u2.fullname AS fullname2, u2.username AS username2, u2.user_id as user_id2");
+		$this->db->select("comments.*, u1.fullname, u1.username, u1.twitter, dreams.user_id, u2.fullname AS fullname2, u2.username AS username2, u2.user_id as user_id2");
 		$this->db->where("comment_id", $comment_id);
 		$this->db->join("users u1", "u1.user_id = comments.user_id");
 		$this->db->join("dreams", "dreams.dream_id = comments.dream_id");
@@ -149,12 +149,13 @@ class Notification_Model extends Model {
 		//if ($comment->user_id = $this->notification->user_id) $comment->fullname = "You";
 		
 		if ($comment->user_id2 == $this->notification->user_id) {
-			$notification->text = "$comment->fullname commented on a your dream";
+			$notification->text = "$comment->fullname commented on your dream";
 		} elseif ($this->notification->data->at_mention) {
-			$notification->text = "$comment->fullname mention you in a comment";
+			$notification->text = "$comment->fullname mentioned you in a comment";
 		} else {
 			$notification->text = "$comment->fullname also commented on $comment->fullname2's dream";
 		}
+		$notification->user->twitter = $comment->twitter;
 		$notification->direct_link = "dream/$comment->dream_id#comment_$comment->comment_id";
 				
 		return $notification;

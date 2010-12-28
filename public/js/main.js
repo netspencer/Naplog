@@ -6,6 +6,8 @@ $(document).ready(function() {
 	$(".widget.describe textarea").autogrow();
 	$("span.timestamp").timeago();
 	
+	$(window.location.hash).addClass("from_hash");
+	
 	$(".widget.rate ul li").click(function() {
 		$(".widget.rate input[name='sleep']").val($(this).attr("rel"));
 		$(this).siblings().removeClass("current");

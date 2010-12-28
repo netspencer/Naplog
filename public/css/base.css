@@ -22,7 +22,7 @@ header h1 {
 header h1 img {
   height: 40px;
 }
-header .container_12 {
+header hgroup {
   border-top: 1px #16467f solid;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -33,6 +33,14 @@ header .container_12 {
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
   box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+}
+header div.left {
+  padding: 0 20px;
+  float: left;
+  width: 120px;
+}
+header div.right {
+  float: left;
 }
 header ul.nav {
   height: 56px;
