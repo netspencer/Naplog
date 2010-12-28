@@ -34,6 +34,7 @@ class jquery_tmpl {
 	}
 	
 	private function _build_tmpl_loop() {
+		$return = null;
 		if ($this->templates) $return = "<!-- jquery tmpl -->\n";
 		foreach($this->templates as $tmpl) {
 			$return .= "<script id=\"tmpl_$tmpl\" type=\"text/x-jquery-tmpl\">";

@@ -20,6 +20,7 @@ class Users extends Controller {
 	function act_as($user) {
 		if (base_url()=="http://spencer.local/"||base_url()=="http://kfir.local/") $this->user->act_as($user);
 		echo "You are now acting as: $user";
+		redirect("test");
 	}
 	
 	function view($user, $subpage = null) {

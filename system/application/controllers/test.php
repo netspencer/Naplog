@@ -60,6 +60,15 @@ class Test extends Controller {
 		}
 	}
 	
+	function send_notif() {
+		$this->load->library("notifo_api");
+		$data['to'] = "spencer";
+		$data['msg'] = "test";
+		$result = $this->notifo_api->send_notification($data);
+		print_r($result);
+		echo "test";
+	}
+	
 }
 
 ?>
