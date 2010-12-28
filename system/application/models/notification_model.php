@@ -72,7 +72,7 @@ class Notification_Model extends Model {
 			$this->data['at_mention'] = true;
 			foreach($users as $user) {
 				$user = $this->Users_Model->get_user($user);
-				if ($user && $user->user_id != $comment->user_id) {
+				if ($user && $user->user_id != $comment->user_id && !in_array($user->user_id, $user_ids)) {
 					$this->user_id = $user->user_id;
 					$this->_create();
 					$user_ids[] = $this->user_id;

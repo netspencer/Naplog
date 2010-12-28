@@ -29,6 +29,11 @@ class User {
 		$this->_expand_session();
 	}
 	
+	function act_as($user) {
+		$user = $this->get_user($user);
+		$this->CI->session->set_userdata("user", $user->user_id);
+	}
+	
 	function require_login() {
 		if(!$this->logged_in) redirect("auth/login");
 	}

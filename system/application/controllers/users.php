@@ -17,6 +17,10 @@ class Users extends Controller {
 		redirect("user/$username");
 	}
 	
+	function act_as($user) {
+		if (base_url()=="http://spencer.local/") $this->user->act_as($user);
+	}
+	
 	function view($user, $subpage = null) {
 		$user = $this->Users_Model->get_user($user);
 		
@@ -62,6 +66,8 @@ class Users extends Controller {
 	}
 	
 	function notifications() {
+		$this->user->require_login();
+		
 		$data['notifications'] = $this->Notification_Model->get();
 		
 		$this->carabiner->css("notifications.css");
@@ -72,6 +78,8 @@ class Users extends Controller {
 	}
 	
 	function load_notification($id) {
+		$this->user->require_login();
+		
 		$notification = $this->Notification_Model->_get_notification($id);
 		
 		$user_id = $notification->obj->user_id;
@@ -85,6 +93,8 @@ class Users extends Controller {
 	}
 	
 	function settings() {
+		$this->user->require_login();
+		
 		$this->load->library("form_validation");
 		$this->load->helper("form");
 		$this->carabiner->css("settings.css");

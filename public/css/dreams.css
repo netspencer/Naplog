@@ -80,6 +80,13 @@ section#dreams ul.comments li {
   margin: 10px 0;
   list-style: none;
 }
+section#dreams ul.comments li a {
+  color: #164782;
+  text-decoration: none;
+}
+section#dreams ul.comments li.from_hash div.top {
+  background: #f5ffad;
+}
 section#dreams ul.comments li div.top {
   padding: 10px;
   background: #efefef;
