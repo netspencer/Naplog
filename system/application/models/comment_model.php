@@ -18,19 +18,23 @@ class Comment_Model extends Model {
 	
 	function like($action = "like") {
 		$data['user_id'] = $this->user->data->user_id;
-	//	$this->notify->from_user($this->user->data->user_id);
 		$data['dream_id'] = $this->dream_id;
-	//	$this->notify->response_to_dream($this->dream_id, true);
-	//	$this->notify->build_subject("liked", true);
 		
 		$return['user'] = $this->user->data->username;
 		$return['dream'] = $this->dream_id;
 		if (!$this->user_liked()) {
 			$this->db->insert("likes", $data);
+			$like_id = $this->db->insert_id();
+			$this->Notification_Model->notify_like($like_id);
 			$return['action'] = "liked";
-		//	$this->notify->send();
+			
 		} else {
+			$query = $this->db->get_where("likes", $data);
+			$like = $query->row();
+			$like_id = $like->like_id;
+			$return['like_id'] = $like_id;
 			$this->db->delete("likes", $data);
+			$this->Notification_Model->notify_like($like_id, "unliked");
 			$return['action'] = "unliked";
 		}
 		
@@ -58,13 +62,9 @@ class Comment_Model extends Model {
 	
 	function insert_comment() {
 		$data['user_id'] = $this->user->data->user_id;
-	//	$this->notify->from_user($this->user->data->user_id);
 		$data['dream_id'] = $this->dream_id;
-	//	$this->notify->response_to_dream($this->dream_id, true);
 		$data['created_at'] = now();
 		$data['content'] = $this->content;
-	//	$this->notify->content = $this->content;
-	//	$this->notify->build_subject("commented");
 		
 		$this->db->insert("comments", $data);
 		$comment_id = $this->db->insert_id();

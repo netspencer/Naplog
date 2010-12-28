@@ -46,8 +46,12 @@ class Test extends Controller {
 		echo $notification->link;
 	}
 	
-	function notify_comment($id) {
-		$this->notification->notify_comment($id);
+	function notify_like($id) {
+		$this->notification->user_id = 23;
+		$this->notification->item_id = 504;
+		$this->notification->type = "like";
+		
+		$this->notification->_delete();
 	}
 	
 	function preg() {

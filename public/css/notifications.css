@@ -38,3 +38,9 @@ section#notifications ul li div.avatar {
 section#notifications ul li p.text {
   float: left;
 }
+section#notifications ul li p.text span.timestamp {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #666;
+  display: block;
+}
