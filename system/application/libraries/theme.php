@@ -54,7 +54,7 @@ class Theme {
 	
 	function add_data($new = null) {
 		$old = $this->data;
-	    $this->data = array_merge($new, $old); // add new data to data object
+	    $this->data = array_merge((array)$new, (array)$old); // add new data to data object
 	}
 	
 	function load_page($page, $data = null) {
