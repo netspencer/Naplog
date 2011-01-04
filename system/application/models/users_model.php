@@ -41,7 +41,15 @@ class Users_Model extends Model {
 			}
 		}
 	}
-		
+	
+	function find_does_follow() {
+		foreach($this->users as &$user) {
+			$user->does_follow = $this->Follow_Model->does_follow($user->user_id);
+		}
+
+		return $this->users;
+	}
+	
 	function get_user($user) {
 		$user = $this->user->get_user($user);
 		
