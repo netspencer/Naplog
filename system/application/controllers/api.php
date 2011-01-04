@@ -55,9 +55,13 @@ class API extends REST_Controller {
 		$this->dream->content = $this->post("plain");
 		$email = "spencer@netspencer.com";
 		$user = $this->user->get_user(null,trim($email));
-		$this->dream->user_id = $user->user_id;
-		$dream = $this->dream->insert_dream();
-		$this->response($dream);
+		if ($user) {
+			$this->dream->user_id = $user->user_id;
+			$dream = $this->dream->insert_dream();
+			$this->response($dream);
+		} else {
+			$this->response("No user found from email");
+		}
 	}
 	
 	function load_more_dreams_get() {
