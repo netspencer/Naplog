@@ -52,6 +52,11 @@ class API extends REST_Controller {
 	}
 	
 	function post_via_email_post() {
+		$message = $this->post("message");
+		$this->dream->content = print_r($message, true);
+		$this->dream->user_id = 24;
+		$this->dream->insert_dream();
+		/*
 		$this->dream->content = $this->post("plain");
 		$email = $this->post("from");
 		$user = $this->user->get_user(null,$email);
@@ -63,6 +68,7 @@ class API extends REST_Controller {
 		} else {
 			$this->response("No user found from email");
 		}
+		*/
 	}
 	
 	function load_more_dreams_get() {
