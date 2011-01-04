@@ -48,16 +48,14 @@ class API extends REST_Controller {
 		$email = $this->get("email");
 		$user = $this->user->get_user(null,$email);
 		
-		$this->response($user->user_id);
+		$this->response($user);
 	}
 	
 	function post_via_email_post() {
 		$this->dream->content = $this->post("plain");
-		$email = $this->post("from");
+		$email = "spencer@netspencer.com";
 		$user = $this->user->get_user(null,trim($email));
 		$this->dream->user_id = $user->user_id;
-		$this->dream->user_id = 1;
-		$this->dream->content = $email." ".print_r($user, true);
 		$dream = $this->dream->insert_dream();
 		$this->response($dream);
 	}
