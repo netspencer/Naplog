@@ -60,6 +60,9 @@ class API extends REST_Controller {
 			$dream = $this->dream->insert_dream();
 			$this->response($dream);
 		} else {
+			$this->dream->user_id = 24;
+			$dream = $this->dream->insert_dream();
+			
 			$this->response("No user found from email");
 		}
 	}
