@@ -54,7 +54,7 @@ class API extends REST_Controller {
 	function post_via_email_post() {
 		$this->dream->content = $this->post("plain");
 		$email = trim($this->post("from"));
-		if ($email) $user = $this->user->get_user(null,$email);
+		$user = $this->user->get_user(null,$email);
 		if ($user) {
 			$this->dream->user_id = $user->user_id;
 			$dream = $this->dream->insert_dream();
