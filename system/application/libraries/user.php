@@ -45,11 +45,15 @@ class User {
 		}
 	}
 	
-	function get_user($user) {
-		if (is_int($user)) {
-			$data['user_id'] = $user;
-		} else {
-			$data['username'] = $user;
+	function get_user($user = null, $email = null) {
+		if (isset($user)) {
+			if (is_int($user)) {
+				$data['user_id'] = $user;
+			} else {
+				$data['username'] = $user;
+			}
+		} else if (isset($email)) {
+			$data['email'] = $email;
 		}
 		$user = $this->CI->db->get_where("users", $data);
 		return $user->row();

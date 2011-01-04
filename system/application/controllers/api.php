@@ -44,12 +44,20 @@ class API extends REST_Controller {
 		$this->response($response);
 	}
 	
+	function test_get() {
+		$email = $this->get("email");
+		$user = $this->user->get_user(null,$email);
+		
+		$this->response($user->user_id);
+	}
+	
 	function post_via_email_post() {
 		$this->dream->content = $this->post("plain");
-		$this->dream->user_id = 1;
-		$this->dream->sleep_hours = 8;
-		$this->dream->insert_dream();
-		$this->response("pizza");
+		$email = $this->post("from");
+		$user = $this->user->get_user(null,$email);
+		$this->dream->user_id = $user->user_id;
+		$dream = $this->dream->insert_dream();
+		$this->response($dream);
 	}
 	
 	function load_more_dreams_get() {
