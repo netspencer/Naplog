@@ -48,6 +48,7 @@ class API extends REST_Controller {
 		$this->dream->content = $this->post("plain");
 		$this->dream->user_id = 1;
 		$this->dream->sleep_hours = 8;
+		$this->dream->insert_dream();
 		$this->response("pizza");
 	}
 	

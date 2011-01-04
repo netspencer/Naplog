@@ -28,7 +28,7 @@ class Dream_Model extends Model {
 		
 		if ($this->content !='') {
 			$this->db->insert("dreams", $data);
-			return true;
+			return $this->db->insert_id();
 		} else {
 			return false;
 		}
