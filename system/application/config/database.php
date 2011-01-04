@@ -39,9 +39,12 @@ if (base_url() == "http://naplog.com/") {
 	$active_group = "default";
 } else {
 	$active_group = "mamp";
-}*/
+}
+*/
+
 $active_group = "default";
 $active_record = TRUE;
+
 
 $db['default']['hostname'] = "external-db.s72725.gridserver.com";
 $db['default']['username'] = "db72725_naplog";

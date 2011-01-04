@@ -7,9 +7,7 @@ class API extends REST_Controller {
 		$this->load->model("Dream_Model", "dream");
 		$this->load->model("Comment_Model", "comment");
 		$this->load->model("Follow_Model", "follow");
-		$this->user->set();
-		$this->user->require_login();
-		
+		$this->user->set();		
 	}
 	
 	function like_dream_post() {
@@ -44,6 +42,13 @@ class API extends REST_Controller {
 		$response['num_likes'] = $likes->num;
 		
 		$this->response($response);
+	}
+	
+	function post_via_email_post() {
+		$this->dream->content = $this->post("plain");
+		$this->dream->user_id = 1;
+		$this->dream->sleep_hours = 8;
+		$this->response("pizza");
 	}
 	
 	function load_more_dreams_get() {

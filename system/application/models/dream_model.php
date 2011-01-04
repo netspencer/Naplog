@@ -5,10 +5,14 @@ class Dream_Model extends Model {
 	function Dream_Model() {
 		parent::Model();
 		$this->user->set();
+		$this->user_id = $this->user->data->user_id;
+		$this->created_at = now();
 	}
 	
 	var $content = "";
 	var $sleep_hours = "";
+	var $user_id;
+	var $created_at;
 	var $results;
 	var $from_user = null;
 	var $follow_only = false;
@@ -19,8 +23,8 @@ class Dream_Model extends Model {
 	function insert_dream() {
 		$data['content'] = $this->content;
 		$data['sleep_hours'] = $this->sleep_hours;
-		$data['created_at'] = now();
-		$data['user_id'] = $this->user->data->user_id;
+		$data['created_at'] = $this->created_at;
+		$data['user_id'] = $this->user_id;
 		
 		if ($this->content !='') {
 			$this->db->insert("dreams", $data);
