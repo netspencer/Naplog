@@ -3,12 +3,13 @@
 		<div class="grid_8">
 			<?php $this->load->view("inc/list_dreams", array("dreams"=>$dreams));?>
 			<?php $this->load->view("inc/list_likes", array("likes"=>$likes->list, "num_likes"=>$likes->num));?>
-			<?php $this->load->view("inc/list_comments", array("comments"=>$comments));?>
 			<form id="add-comment">
-				<h2>add a comment</h2>
+				<h2>Comment</h2>
 				<input type="hidden" name="dream_id" value="<?=$dreams[0]->dream_id?>"/>
 				<textarea name="content"></textarea>
 			</form>
+			<?php $this->load->view("inc/list_comments", array("comments"=>$comments));?>
+
 		</div>
 		<div class="grid_4">
 			<div class="ad">	

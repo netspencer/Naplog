@@ -1,62 +1,55 @@
 section#welcome {
-margin: 20px;
-text-align:center;
-margin:auto;
+  margin: 20px;
+  text-align: center;
 }
-#intro_header {
-	font-size:42px;
-	margin-bottom:30px;
+section#welcome #intro_header {
+  font-size: 42px;
+  margin-bottom: 30px;
 }
-img.welcome_image {
-	margin-top:20px;
-	width:300px;
-	margin-right:20px;
-	display:inline;
+section#welcome img.welcome_image {
+  margin-top: 20px;
+  width: 300px;
+  margin-right: 20px;
+  display: inline;
 }
-p.welcome_image {
-	margin-top:380px;
-	font-size:22px;
-	display:inline;
-	color:black;
-	font-family:times;
+section#welcome p.welcome_image {
+  margin-top: 380px;
+  font-size: 22px;
+  display: inline;
+  color: black;
+  font-family: times;
 }
-form input[type="text"] {
-	form input[type="text"]
-	border: 3px;
-	border-top-width: 3px;
-	border-right-width: 3px;
-	border-bottom-width: 3px;
-	border-left-width: 3px;
-	border-style: solid;
-	border-color: black;
-	color: #CCC;
-	display: inline;
-	font-family: Georgia, serif;
-	font-size: 28px;
-	padding: 8px;
-	position: relative;
-	text-align: center;
-	width: 382px;
-
- Georgia, serif;
-8px;
-enter;
-
+section#welcome form input[type="text"] {
+  border: 3px;
+  border-top-width: 3px;
+  border-right-width: 3px;
+  border-bottom-width: 3px;
+  border-left-width: 3px;
+  border-style: solid;
+  border-color: black;
+  color: #CCC;
+  display: inline;
+  font-family: Georgia, serif;
+  font-size: 28px;
+  padding: 8px;
+  position: relative;
+  text-align: center;
+  width: 382px;
 }
-form input[type="submit"] {
-	border: 3px;
-	border-left: 0px solid #4B5F7A;
-	border-width: 3px;
-	border-left-color: #4B5F7A;
-	border-style: solid;
-	color: #4B5F7A;
-	font-family: Georgia, serif;
-	font-size: 28px;
-	padding: 8px;
-	position: relative;
-	margin-right: -12px;
-	width: 120px;
+section#welcome form input[type="submit"] {
+  border: 3px;
+  border-left: 0px solid #4B5F7A;
+  border-width: 3px;
+  border-left-color: #4B5F7A;
+  border-style: solid;
+  color: #4B5F7A;
+  font-family: Georgia, serif;
+  font-size: 28px;
+  padding: 8px;
+  position: relative;
+  margin-right: -12px;
+  width: 120px;
 }
-.alot_of_space {
-	margin-top:200px;
+section#welcome .alot_of_space {
+  margin-top: 200px;
 }

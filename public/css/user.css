@@ -50,3 +50,27 @@ section#user .follow_button a.follow {
 section#user .follow_button a.unfollow {
   background-color: #d96c54 !important;
 }
+/* banner */
+#profile_page_banner {
+  margin-bottom: 20px;
+}
+div.profile_page_picture {
+  float: left;
+  margin-right: 20px;
+}
+img.profile_page_picture {
+  height: 120px;
+  width: 120px;
+}
+div.profile_page_header {
+  padding-top: 5px;
+  float: left;
+}
+p.profile_page_header_fullname {
+  font-size: 25px;
+  font-weight: bold;
+}
+p.profile_page_header_username {
+  font-size: 20px;
+  color: grey;
+}
