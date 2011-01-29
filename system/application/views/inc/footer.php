@@ -1,10 +1,6 @@
+<div class="endofpage"></div>
 <footer>
-	<div class="container_12">
-		<div class="grid_12">
-			<p>&copy; 2010 &mdash; Naplog // {elapsed_time}</p>
-		</div>
-		<div class="clear"></div>
-	</div>
+	<p>&copy; 2010 &mdash; Naplog // {elapsed_time}</p>
 </footer>
 	
 <?php $this->carabiner->display("js")?>
