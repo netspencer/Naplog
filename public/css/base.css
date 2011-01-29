@@ -1,6 +1,7 @@
 /* COLORS */
 /* --- colors --- */
 body {
+  background-image: url("../img/clouds.png");
   background-color: #bef;
   background-position: center bottom;
   background-repeat: repeat-x;
