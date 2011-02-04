@@ -1,6 +1,53 @@
 section#new_dream {
   margin-top: 20px;
 }
+section#new_dream div.dashboard_navbar {
+  border: 2px #b7ccc9 solid;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+section#new_dream .dasboard_navbar_fancyness {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background: #2978b8;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2b7ec2), to(#2671ad));
+  background: -moz-linear-gradient(linear, left top, left bottom, from(#2b7ec2), to(#2671ad));
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  padding: 5px;
+  padding-left: 20px;
+}
+section#new_dream .dasboard_navbar_fancyness p {
+  color: white;
+}
+section#new_dream ul.dashboard_navbar {
+  list-style: none;
+  display: block;
+}
+section#new_dream li.dashboard_navbar {
+  padding-left: 10px;
+  float: left;
+}
+section#new_dream a.dashboard_navbar {
+  text-decoration: none;
+  color: black;
+}
+section#new_dream .post_dream {
+  border: 2px #b7ccc9 solid;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+}
 section#new_dream .banner {
   margin-bottom: 10px;
 }
