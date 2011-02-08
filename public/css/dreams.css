@@ -1,15 +1,19 @@
 section#dreams {
   margin-top: 20px;
 }
+section#dreams div.sidebar {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  border-color: eee;
+  background-color: #fff;
+  padding-top: 10px;
+}
 section#dreams div.ad {
-  background: #cee3e6;
   padding: 20px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.199219) 1px 1px 5px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.199219) 1px 1px 5px;
-  box-shadow: rgba(0, 0, 0, 0.199219) 1px 1px 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  width: 180px;
 }
 section#dreams div.ad h3 {
   text-align: center;
@@ -23,11 +27,31 @@ section#dreams div.ad img {
 section#dreams div.ad:hover img {
   opacity: 1;
 }
+section#dreams .fancyness {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background: #2978b8;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2b7ec2), to(#2671ad));
+  background: -moz-linear-gradient(linear, left top, left bottom, from(#2b7ec2), to(#2671ad));
+  -webkit-box-shadow: rgba(0, 1, 0, 0.5) 1px 1px 5px;
+  -moz-box-shadow: rgba(0, 1, 0, 0.5) 1px 1px 5px;
+  box-shadow: rgba(0, 1, 0, 0.5) 1px 1px 5px;
+  padding: 5px;
+  padding-left: 20px;
+}
+section#dreams .fancyness p {
+  color: white;
+}
 section#dreams ul.sections {
   list-style: none;
-  border-bottom: 3px #666 solid;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -webkit-box-shadow: rgba(0, 1, 0, 0.5) 1px 1px 5px;
+  -moz-box-shadow: rgba(0, 1, 0, 0.5) 1px 1px 5px;
+  box-shadow: rgba(0, 1, 0, 0.5) 1px 1px 5px;
 }
 section#dreams ul.sections li {
   font-size: 18px;
@@ -48,6 +72,9 @@ section#dreams ul.sections li a {
   padding-right: 30px;
   color: inherit;
   text-decoration: none;
+}
+section#dreams ul.sections li p {
+  margin-right: 5px;
 }
 section#dreams ul.sections:after {
   content: '';

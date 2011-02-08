@@ -1,13 +1,14 @@
 /* COLORS */
 /* --- colors --- */
 body {
-  background: #FFF;
-  background: url("../img/bg-tile.png");
+  background-image: url("../img/clouds.png");
+  background-color: #c2e0ea;
+  background-position: center bottom;
   background-repeat: repeat-x;
   font-family: "HelveticaNeue", Helvetica, sans-serif;
 }
 body.landing_page {
-  background: url("../img/bg.png");
+  background: url("../img/thaopaint-1.png");
   background-repeat: repeat-x;
 }
 .nl-template {
@@ -103,12 +104,15 @@ header ul.sub li a {
   text-decoration: none;
   color: inherit;
 }
+div.endofpage {
+  height: 100px;
+}
 footer {
-  padding: 20px 0;
-  margin-top: 20px;
+  width: 100%;
+  font-size: 14px;
   color: #666;
   text-align: center;
-  font-family: Georgia, serif;
+  padding: 20px 0;
 }
 div.avatar {
   -webkit-box-shadow: rgba(0, 0, 0, 0.199219) 1px 1px 5px;

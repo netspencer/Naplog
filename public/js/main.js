@@ -3,6 +3,7 @@ var base_url = "/";
 var page = 1;
 
 $(document).ready(function() {
+	$(window).resize();
 	$(".widget.describe textarea").autogrow();
 	$("span.timestamp").timeago();
 	
@@ -116,6 +117,16 @@ $(document).ready(function() {
 		$(this).hide();
 		$("#new_password").fadeIn();
 	});
+});
+
+$(window).resize(function() {
+	window_height = $(window).height();
+	body_height = $("body").height();
+	diff = window_height - body_height;
+	if (diff > 0) {
+		diff = (diff + $("div.endofpage").height()) - 20;
+		$("div.endofpage").height(diff);
+	}
 });
 
 function set_comment(value) {

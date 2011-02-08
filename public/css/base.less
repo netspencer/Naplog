@@ -7,14 +7,18 @@
 /* --- colors --- */
 
 body {
-	background:#FFF;
-	background:url("../img/bg-tile.png");
+	//padding-bottom:100px;
+	background-image:url("../img/clouds.png");
+
+	background-color:#c2e0ea;
+	background-position:center bottom;
 	background-repeat:repeat-x;
 	font-family:"HelveticaNeue", Helvetica, sans-serif;
 	&.landing_page {
 		//background:url("../img/bg-dolphin.jpg");\
-		background:url("../img/bg.png");
+		background:url("../img/thaopaint-1.png");
 		background-repeat:repeat-x;
+		//background-repeat:no-repeat;
 	}
 }
 
@@ -24,6 +28,7 @@ body {
 
 header {
 	margin-top:20px;
+	
 	
 	h1 {
 		padding:8px;
@@ -125,12 +130,16 @@ header {
 	}
 }
 
+div.endofpage {
+	height:100px;
+}
+
 footer {
-	padding:20px 0;
-	margin-top:20px;
+	width:100%;
+	font-size:14px;
 	color:#666;
 	text-align:center;
-	font-family:Georgia, serif;
+	padding:20px 0;
 }
 
 div.avatar {

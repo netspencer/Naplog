@@ -1,6 +1,55 @@
 section#new_dream {
   margin-top: 20px;
 }
+section#new_dream div.dashboard_navbar {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+section#new_dream .dashboard_navbar_fancyness {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background: #2978b8;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2b7ec2), to(#2671ad));
+  background: -moz-linear-gradient(linear, left top, left bottom, from(#2b7ec2), to(#2671ad));
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  padding-top: 21px;
+  padding-bottom: 5px;
+}
+section#new_dream .dashboard_navbar_fancyness p {
+  padding-left: 20px;
+  color: white;
+}
+section#new_dream ul.dashboard_navbar {
+  list-style: none;
+  display: block;
+}
+section#new_dream li.dashboard_navbar {
+  padding-left: 10px;
+  float: left;
+}
+section#new_dream a.dashboard_navbar {
+  text-decoration: none;
+  color: black;
+}
+section#new_dream .post_dream {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #fff;
+}
 section#new_dream .banner {
   margin-bottom: 10px;
 }

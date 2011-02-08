@@ -36,6 +36,7 @@ section#user {
 /* banner */
 #profile_page_banner {
 	margin-bottom:20px;
+	width:500px;
 }
 div.profile_page_picture {
 	float:left;
@@ -56,4 +57,29 @@ p.profile_page_header_fullname {
 p.profile_page_header_username {
 	font-size:20px;
 	color:grey;
+}
+#user_stats {
+	margin-top:10px;
+	float:left;
+}
+div.user_stats {
+	padding-right:10px;
+	margin-right:10px;
+	text-align:center;
+	float:left;
+	&.user_dreams {
+		border-right:solid 1px;
+	}
+	&.user_followers {
+		border-right: solid 1px;
+	}
+}
+p.user_stats {
+	&.stat_num {
+		margin-bottom:3px;
+	}
+}
+a.user_stats {
+	text-decoration:none;
+	color:black;
 }
