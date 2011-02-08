@@ -2,16 +2,14 @@ section#dreams {
   margin-top: 20px;
 }
 section#dreams div.sidebar {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
   box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
-  border-color: #eee;
+  border-color: eee;
   background-color: #fff;
-  padding-top: 30px;
-  padding-bottom: 2000px;
+  padding-top: 10px;
 }
 section#dreams div.ad {
   padding: 20px;
@@ -30,15 +28,14 @@ section#dreams div.ad:hover img {
   opacity: 1;
 }
 section#dreams .fancyness {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   background: #2978b8;
   background: -webkit-gradient(linear, left top, left bottom, from(#2b7ec2), to(#2671ad));
   background: -moz-linear-gradient(linear, left top, left bottom, from(#2b7ec2), to(#2671ad));
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
-  box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
+  -webkit-box-shadow: rgba(0, 1, 0, 0.5) 1px 1px 5px;
+  -moz-box-shadow: rgba(0, 1, 0, 0.5) 1px 1px 5px;
+  box-shadow: rgba(0, 1, 0, 0.5) 1px 1px 5px;
   padding: 5px;
   padding-left: 20px;
 }
@@ -49,11 +46,12 @@ section#dreams ul.sections {
   list-style: none;
   margin-bottom: 20px;
   padding: 20px;
-  border: 2px #b7ccc9 solid;
   background-color: #fff;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -webkit-box-shadow: rgba(0, 1, 0, 0.5) 1px 1px 5px;
+  -moz-box-shadow: rgba(0, 1, 0, 0.5) 1px 1px 5px;
+  box-shadow: rgba(0, 1, 0, 0.5) 1px 1px 5px;
 }
 section#dreams ul.sections li {
   font-size: 18px;

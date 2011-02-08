@@ -4,8 +4,7 @@
 			<div class="grid_9">
 				<div class="errors"><?=validation_errors()?></div>
 			</div>
-			<div class="dasboard_navbar_fancyness grid_9">
-				<p>Hi thar</p>
+			<div class="dashboard_navbar_fancyness grid_9">
 			</div>
 			<div class="dashboard_navbar grid_9">
 				<ul class="dashboard_navbar">
@@ -14,6 +13,12 @@
 					<li class="dashboard_navbar"><a class="dashboard_navbar" href="">My Analytics</a></li>		
 			</div>
 			<div class="clear"></div>
+			
+				<div class="dashboard_navbar_fancyness grid_9">
+						
+					
+				</div>
+					
 			<div class="post_dream grid_9">
 			
 				<div class="clear"></div>
@@ -45,15 +50,13 @@
 						</ul>
 						
 					</div>
-				</div>
 				
-				<div class="grid_9">
 					<div class="widget describe">
 						<h2>Describe your dream last night.</h2>
 							<textarea name="content"></textarea>
 							
 					</div>
-
+					
 				</div>
 				
 				<div class="clear"></div>
