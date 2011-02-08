@@ -56,7 +56,7 @@
 							<textarea name="content"></textarea>
 							
 					</div>
-					
+					<input class='submit_button' type='submit' value'submit' />
 				</div>
 				
 				<div class="clear"></div>
