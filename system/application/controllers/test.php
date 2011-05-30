@@ -7,6 +7,7 @@ class Test extends Controller {
 		$this->user->set();
 		$this->load->model("follow_model", "follow");
 		$this->load->model("notification_model", "notification");
+		$this->load->library("Email_Parse");
 	}
 	
 	function index() {
@@ -71,6 +72,12 @@ class Test extends Controller {
 		$result = $this->notifo_api->send_notification($data);
 		print_r($result);
 		echo "test";
+	}
+	
+	function parse_email() {
+		$email = $this->Email_Parse->parse("silly");
+		print_r($email);
+		echo "<hr>test";
 	}
 	
 }

@@ -13,26 +13,26 @@
 					<li class="dashboard_navbar"><a class="dashboard_navbar" href="">My Analytics</a></li>		
 			</div>
 			<div class="clear"></div>
-			
+
 				<div class="dashboard_navbar_fancyness grid_9">
-						
-					
+
+
 				</div>
-					
+
 			<div class="post_dream grid_9">
-			
+
 				<div class="clear"></div>
-				
-            	
-		    	
+
+
+
 				<div class="grid_9">
-					
+
 					<div class="widget rate">
 						<h2>How many hours did you sleep?</h2>
-					
+
 						<div class="sleep"></div>
 						<input type="hidden" name="sleep" value="8" />
-					
+
 						<ul>
 							<li rel="1" class="d1">1</li>
 							<li rel="2" class="d2">2</li>
@@ -48,17 +48,17 @@
 							<li rel="12" class="d12">12</li>
 							<div class="clear"></div>							
 						</ul>
-						
+
 					</div>
-				
+
 					<div class="widget describe">
 						<h2>Describe your dream last night.</h2>
 							<textarea name="content"></textarea>
-							
+
 					</div>
 					<input class='submit_button' type='submit' value'submit' />
 				</div>
-				
+
 				<div class="clear"></div>
 			</div>
 		</div>

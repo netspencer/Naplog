@@ -22,6 +22,7 @@ class Dreams extends Controller {
 		$this->carabiner->css("dreams.css");
 		
 		$this->theme->set_title("Dreams");
+		$this->theme->set_title("Everything");
 		$this->theme->set_current("dreams");
 		$this->theme->load_page("dreams", $data);
 	}
@@ -45,6 +46,7 @@ class Dreams extends Controller {
 		$data['username'] = "pizza";
 		$data['dreams'] = $this->Dream_Model->get_dreams($id);
 		$data['likes'] = $this->Comment_Model->get_likes($id, false);
+		$this->Comment_Model->order = "desc";
 		$data['comments'] = $this->Comment_Model->get_comments($id);
 		if (!$data['dreams']) redirect('/');
 				
