@@ -2,8 +2,7 @@ section#dreams {
   margin-top: 20px;
 }
 section#dreams div.sidebar {
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-radius: 10px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
   box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px;
@@ -27,28 +26,12 @@ section#dreams div.ad img {
 section#dreams div.ad:hover img {
   opacity: 1;
 }
-section#dreams .fancyness {
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  background: #2978b8;
-  background: -webkit-gradient(linear, left top, left bottom, from(#2b7ec2), to(#2671ad));
-  background: -moz-linear-gradient(linear, left top, left bottom, from(#2b7ec2), to(#2671ad));
-  -webkit-box-shadow: rgba(0, 1, 0, 0.5) 1px 1px 5px;
-  -moz-box-shadow: rgba(0, 1, 0, 0.5) 1px 1px 5px;
-  box-shadow: rgba(0, 1, 0, 0.5) 1px 1px 5px;
-  padding: 5px;
-  padding-left: 20px;
-}
-section#dreams .fancyness p {
-  color: white;
-}
 section#dreams ul.sections {
   list-style: none;
   margin-bottom: 20px;
   padding: 20px;
   background-color: #fff;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-radius: 5px;
   -webkit-box-shadow: rgba(0, 1, 0, 0.5) 1px 1px 5px;
   -moz-box-shadow: rgba(0, 1, 0, 0.5) 1px 1px 5px;
   box-shadow: rgba(0, 1, 0, 0.5) 1px 1px 5px;

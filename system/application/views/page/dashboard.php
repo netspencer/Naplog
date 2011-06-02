@@ -4,20 +4,10 @@
 			<div class="grid_9">
 				<div class="errors"><?=validation_errors()?></div>
 			</div>
-			<div class="dashboard_navbar_fancyness grid_9">
-			</div>
-			<div class="dashboard_navbar grid_9">
-				<ul class="dashboard_navbar">
-					<li class="dashboard_navbar"><a class="dashboard_navbar" href="">Log Dream</a></li>
-					<li class="dashboard_navbar"><a class="dashboard_navbar" href="">My Dreams</a></li>
-					<li class="dashboard_navbar"><a class="dashboard_navbar" href="">My Analytics</a></li>		
-			</div>
+
+
 			<div class="clear"></div>
 
-				<div class="dashboard_navbar_fancyness grid_9">
-
-
-				</div>
 
 			<div class="post_dream grid_9">
 

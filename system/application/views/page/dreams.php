@@ -1,9 +1,7 @@
 <section id="dreams">
 	<div class="container_12">
 		<div class="grid_9">
-			<div class="fancyness">
-				<p>Sort by</p>
-			</div>
+
 			<ul class="sections">
 				<li <?php if($current_section=="following") echo "class=\"current\""?>><a href="<?=base_url()?>dreams/following">Following</a></li>
 				<li <?php if($current_section=="popular") echo "class=\"current\""?>><a href="<?=base_url()?>dreams/popular">Popular</a></li>
@@ -13,9 +11,7 @@
 			<a href="#" id="load_more">Load More Dream</a>
 		</div>
 		<div class="grid_3">
-			<div class="fancyness">
-				<p>Ads</p>
-			</div>
+			
 			<div class="sidebar">
 				<div class="ad">	
 					<h3>Advertisement</h3>
