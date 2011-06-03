@@ -97,6 +97,14 @@ $(document).ready(function() {
 		set_comment("@"+user+" "+temp);
 	});
 	
+	$("#notifications a[rel='mark_all']").click(function() {
+		$.post(base_url+"api/mark_notifications");
+		$("#notifications ul li").removeClass("unread");
+		$("#notifications ul li").addClass("read");
+		$("span#notif_count").text("");
+		return false;
+	});
+	
 	$("div.follow_button a").click(function() {
 		button = $(this).parents(".follow_button");
 		button_a = $(this);

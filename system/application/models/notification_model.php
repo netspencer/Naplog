@@ -26,18 +26,32 @@ class Notification_Model extends Model {
 		$day = 86400;
 		$time_ago = now() - ($day*7);
 		
-		$this->db->where("timestamp >", $time_ago);
+		$this->db->where("read", 0);
 		$this->db->where("user_id", $user_id);
+		
+		$this->db->or_where("timestamp >", $time_ago);
+		$this->db->where("user_id", $user_id);
+		
 		$this->db->order_by("timestamp", "desc");
 		$query = $this->db->get("notifications");
 		$notifications = $query->result();
-		
 		
 		foreach($notifications as $notification) {
 			$results[] = $this->_build_notification($notification);
 		}
 		
 		return $results;
+	}
+	
+	function unread_count($user_id = null) {
+		if (!$user_id) $user_id = $this->user->data->user_id;
+				
+		$this->db->where("user_id", $user_id);
+		$this->db->where("read", 0);
+		$query = $this->db->get("notifications");
+		$count = $query->num_rows();
+		
+		return $count;
 	}
 	
 	function mark($notification_id, $as = "read") {
@@ -51,6 +65,22 @@ class Notification_Model extends Model {
 		}
 		
 		$this->db->where("notification_id", $notification_id);
+		$this->db->update("notifications", $data);
+	}
+	
+	function mark_all($user_id = null, $as = "read") {
+	    if (!$user_id) $user_id = $this->user->data->user_id;
+	    
+	    switch($as) {
+			case "read":
+				$data['read'] = 1;
+				break;
+			case "unread":
+				$data['read'] = 0;
+				break;
+		}
+		
+		$this->db->where("user_id", $user_id);
 		$this->db->update("notifications", $data);
 	}
 	

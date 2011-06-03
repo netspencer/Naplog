@@ -93,7 +93,7 @@ class Users extends Controller {
 			redirect("notifications");
 		}
 	}
-	
+		
 	function settings() {
 		$this->user->require_login();
 		

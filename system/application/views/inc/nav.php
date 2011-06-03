@@ -9,7 +9,7 @@
 				<li class="left <?php if($current=="dreams") echo "current"; ?>"><a href="<?=base_url()?>dreams">Dreams</a></li>
 				<li class="left <?php if($current=="people") echo "current"; ?>"><a href="<?=base_url()?>people">People</a></li>
 				<?php if($user_data):?>
-				<li class="right user first <?php if($current=="account") echo "current"; ?>"><a href="<?=base_url()?>user/<?=$user_data->username?>"><?=$user_data->username?></a>
+				<li class="right user first <?php if($current=="account") echo "current"; ?>"><a href="<?=base_url()?>user/<?=$user_data->username?>"><?=$user_data->username?> <?php if($this->user->notif_count > 0):?><span id="notif_count">(<?=$this->user->notif_count;?>)</span><?php endif;?></a>
 					<ul class="sub">
 						<li><a href="<?=base_url()?>notifications">Notifications</a></li>
 						<li><a href="<?=base_url()?>settings">Settings</a></li>

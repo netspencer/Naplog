@@ -117,6 +117,8 @@ class User {
 		if ($user->num_rows() > 0) {
 			$this->logged_in = true;
 			$this->data = $user->row();
+			$this->CI->load->model("Notification_Model");
+			$this->notif_count = $this->CI->Notification_Model->unread_count($this->data->user_id);
 			return true;
 		} else {
 			$this->logged_in = false;

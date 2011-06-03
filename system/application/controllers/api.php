@@ -44,6 +44,10 @@ class API extends REST_Controller {
 		$this->response($response);
 	}
 	
+	function mark_notifications_post() {
+	    $this->Notification_Model->mark_all();
+	}
+	
 	function test_get() {
 		$email = $this->get("email");
 		$user = $this->user->get_user(null,$email);
